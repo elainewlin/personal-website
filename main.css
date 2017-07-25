@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Muli);
+
+html,
+body {
+  font-family: Muli, sans-serif;
+  background-color: #fcf9fb;
+}
+
+
+a {
+  color: #e5687e;
+}
+
+a:hover {
+  color: #ff748c;
+}
+
+.jumbotron {
+  background-color: #fff0f7;
+}
+
+p, li, label{
+    font-size: 150%;
+}
+
+.navbar-nav {
+    padding-top: 10px;
+}
