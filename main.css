@@ -4,8 +4,8 @@ html,
 body {
   font-family: Muli, sans-serif;
   background-color: #fcf9fb;
+  font-size: 18px;
 }
-
 
 a {
   color: #e5687e;
@@ -15,14 +15,18 @@ a:hover {
   color: #ff748c;
 }
 
-.jumbotron {
-  background-color: #fff0f7;
+.header-link {
+    margin-left: 20px;
+    font-size: 24px;
 }
 
-p, li, label{
-    font-size: 150%;
+#header {
+    background-color: #fff0f7;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-.navbar-nav {
-    padding-top: 10px;
+.project > a {
+    width: 200px;
+    display: inline-block;
 }

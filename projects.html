@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://web.mit.edu/elin1/www/homepage-elin1/main.css">
+    <link rel="stylesheet" href="./main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="./images/pear.png" type="image/x-icon" />
     <script> 
       $(document).ready(function(){
         $("#header").load("header.html"); 
@@ -15,27 +16,25 @@
     </script>
   </head>
   <body>
-      
     <div id="header"></div>
-    <div class="jumbotron">
-      <div class="container text-center">
-        <h1>Projects</h1>
-      </div>
-    </div>
       
     <div class="container">
-      <h2>Developer</h2>
-      <p>I am interested in frontend development. My most recent software project was developing the frontend for <a href="https://votemate.us">votemate</a>, a web app that makes voter registration easy.</p>
-      <img src="http://web.mit.edu/elin1/www/homepage-elin1/images/votemate.png" alt="votemate screenshot" />
-
-      <h2>Blogger</h2>
-      <p>I love to cook. Last fall, I started a food blog, <a href="http://foodparsed.com">FoodParsed</a> so I could provide easy recipes to beginner cooks.</p>
-      <img src="http://web.mit.edu/elin1/www/homepage-elin1/images/kohlrabi.jpg" alt="Pan Fried Kohlrabi" />
-
-      <h2>Climber</h2>
-      <p>I frequently boulder at Rockspot and the MIT climbing wall. Climbing routes are called projects, and I'm currently working on a blue V2.</p>
-      <img src="http://web.mit.edu/elin1/www/homepage-elin1/images/rockspot.jpg" alt="Rockspot Boston" />
+      <div class='project'>
+        <a href="http://www.musicparsed.com/">MusicParsed</a>
+        <span>multi-column view for ukulele song chords</span>
+      </div>
+      <div class='project'>
+        <a href="https://votemate.us">votemate</a>
+        <span> checking US voter registration</span>
+      </div>
+      <div class='project'>
+        <a href="http://foodparsed.com">FoodParsed</a>
+        <span> food blog on cooking with minimal ingredients</span>
+      <div>
+      <div class='project'>
+        <a href="http://centrifugues.mit.edu/">Centrifugues</a>
+        <span> website for MIT a cappella group</span>
+      </div>
     </div>
-
   </body>
 </html>
