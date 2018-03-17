@@ -1,32 +1,38 @@
-@import url(https://fonts.googleapis.com/css?family=Muli);
-
-html,
-body {
-  font-family: Muli, sans-serif;
-  background-color: #fcf9fb;
-  font-size: 18px;
+.navigation {
+  margin: 0;
+  line-height: 40px;
+  height: 40px;
 }
 
-a {
-  color: #e5687e;
+.navbar-logo {
+  display: inline-block;
+  width: 150px;
 }
 
-a:hover {
-  color: #ff748c;
+.navbar-logo > .navbar-link {
+  color: #000;
+  font-size: 16px;
 }
 
-.header-link {
-    margin-left: 20px;
-    font-size: 24px;
+.navbar-item {
+  display: inline-block;
+  text-align: center;
+  min-width: 90px;
 }
 
-#header {
-    background-color: #fff0f7;
-    padding: 20px;
-    margin-bottom: 20px;
+.navbar-link:hover {
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.project > a {
-    width: 200px;
-    display: inline-block;
+.social-section {
+  float: right;
+}
+
+.social-image {
+  padding: 0 2px;
+}
+
+.social-image:hover {
+  opacity: 0.5;
 }
