@@ -4,32 +4,56 @@
   <title>Elaine Lin Portfolio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="icon" href="./images/foodparsed.png" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon.png" type="image/x-icon" />
 
-  <script> 
+  <script>
     $(document).ready(function(){
-      $("#header").load("header.html"); 
+      $("#header").load("header.html");
     });
   </script>
 </head>
 <body>
-  
+
 <div id="header"></div>
 
 <div class="container">
-  <h1>Software. Music. Food.</h1>
-  <h2>Music + Software = <a href="http://www.musicparsed.com/" target="_blank">MusicParsed</a></h2>
-  <p>
-    I started learning guitar in February 2016, but switched to playing ukulele <a href="http://www.musicparsed.com/guides/why_ukulele" target="_blank">for several reasons</a>. While looking up song chords to play, I found existing online sites hard to use - it was difficult to track all songs you play, quickly load different songs, and play through a song without interruption. I sing, play ukulele, and code web apps, so I built <a href="http://www.musicparsed.com/" target="_blank">MusicParsed</a>, a fast, open source site for song chords. 
-  </p>
-  <h2>Food + Software = <a href="http://foodparsed.com" target="_blank">FoodParsed</a></h2>
-  <p>
-    The tagline for my food blog, <a href="http://foodparsed.com" target="_blank">FoodParsed</a>, used to be "Cooking with minimal ingredients". I used to have <a href="http://foodparsed.com/orthorexia-recovery/" target="_blank">orthorexia, an unhealthy obsession with healthy eating</a>, and many earlier posts are absurdly detailed. Now, I changed the tagline to "A healthy approach to healthy eating," and I write about food and mental health.
-  </p>
+  <div class="row">
+    <div class="col">
+      <h2>Hi! I'm Elaine.</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-auto">
+      <img class="portrait" src="./assets/face.jpg" />
+    </div>
+    <div class="col">
+      <div>
+        <h3>Work</h3>
+        I'm a full stack software engineer experienced in managing projects and working in different stacks.
+        <ul>
+          <li>
+            <a href="./assets/resume-2019-04-19.pdf" target="_blank"> Resume</a> (last updated 2019-04-19)
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/elainewlin/" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Personal Projects</h3>
+        I sing and play ukulele, so I built <a href="http://www.musicparsed.com/" target="_blank">MusicParsed</a>, a clean UI for my song collection.
+        <ul>
+          <li>Space-efficient for uninterrupted playing.</li>
+          <li>Includes chords for ukulele, guitar, and more.</li>
+          <li>Open source project on <a href="https://github.com/elainewlin/MusicParsed" target="_blank">Github.</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
