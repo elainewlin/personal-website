@@ -10,12 +10,10 @@
 
 .navbar-logo {
   display: inline-block;
-  width: 160px;
 }
 
 .navbar-logo > .navbar-link {
   color: #000;
-  font-size: 16px;
 }
 
 .navbar-item {
@@ -40,4 +38,8 @@
 
 .social-image:hover {
   opacity: 0.5;
+}
+
+.container {
+  padding: 16px 0;
 }
