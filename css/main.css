@@ -41,5 +41,9 @@
 }
 
 .container {
-  padding: 16px 0;
+  padding: 20px 0;
+}
+
+.center {
+  text-align: center;
 }
