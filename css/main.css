@@ -53,3 +53,11 @@
 .center {
   text-align: center;
 }
+
+.post-table > tbody > tr > td {
+  padding: 0;
+}
+
+.post-date {
+  width: 108px;
+}
