@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elaine Lin Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $(".navigation").load("/base/nav.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="navigation"></div>
+    </div>
+    <div class="container">
+      <h2>Practical git cheat sheet</h2>
+      <p>
+        Do you want to improve your git skills? Do you ever struggle with merge conflicts, giant
+        changes, or mysterious errors?
+      </p>
+      <p>
+        I learned how to use git from a few years of working in tech. This is a practical git cheat
+        sheet you can reference for many situations. I go over:
+      </p>
+      <ul>
+        <li><a href="#what-is-git">What is git?</a></li>
+        <li><a href="#basic-git-terminology">Basic git terminology</a></li>
+        <li><a href="#common-git-commands">Common git commands</a></li>
+        <li><a href="#practical-git-workflows">Practical git workflows</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+      <h4 id="what-is-git">What is git?</h4>
+      <p>
+        Git is a version control system. Developers use version control to track and manage changes
+        to software. Version control is like Google docs. Both let you to:
+      </p>
+      <ul>
+        <li>Collaborate on projects without emailing files back and forth.</li>
+        <li>Track changes to a project by viewing the version history.</li>
+        <li>Make copies of a project.</li>
+        <li>Work offline and sync your changes when you're back online.</li>
+      </ul>
+      <p>
+        For example, <code>git log</code> is like Google Docs version history. You can see and
+        restore previous snapshots of your progress. To do so:
+      </p>
+      <ul>
+        <li>In Google Docs, click on a previous version.</li>
+        <li>In git, <code>git checkout</code> a previous commit.</li>
+      </ul>
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td><b>Google Docs version history</b></td>
+            <td><b>git log</b></td>
+          </tr>
+          <tr>
+            <td><img src="/assets/google-docs-version-history.png" width="275" /></td>
+            <td><img src="/assets/git-log-example.png" width="300" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 id="basic-git-terminology">Basic git terminology</h4>
+      <p>
+        Learn basic git terminology to have a good mental model of what's going on. Here are some
+        common terms you'll see:
+      </p>
+      <ul>
+        <li>
+          <b>Terminal (aka command line, console):</b> You can use the terminal to talk to a
+          computer by typing commands instead of moving the mouse. Learn to use git via the terminal
+          instead of relying on user interfaces - it's faster and gives you more control. See
+          <a href="#terminal-101">Terminal 101</a> for more details.
+        </li>
+        <li>
+          <b>Repository (aka repo):</b> A repository is a virtual storage of a project. It's a big
+          folder with lots of smaller folders and files. Each project typically has its own
+          repository.
+        </li>
+      </ul>
+      <br />
+      <p class="center">
+        <b>git branches and commits</b>
+        <img src="/assets/understanding-git-branches.jpg" width="600" />
+      </p>
+      <ul>
+        <li>
+          <b>Branch:</b> A project has many branches. Branches let developers to work on different
+          parts of the same project in parallel.
+        </li>
+        <ul>
+          <li>The primary branch is called the <code>master</code> or <code>main</code> branch.</li>
+          <li>You can create a feature branch off of the <code>master</code> branch.</li>
+          <li>
+            Then, you merge the feature branch into <code>master</code> when the feature branch is
+            good to go.
+          </li>
+        </ul>
+        <li>
+          <b>Commit:</b> A commit is a snapshot of a branch at the time of commit. You make commits
+          on a branch to keep track of progress. Each circle in the diagram is a commit.
+        </li>
+        <li>
+          <b>Commit hash (aka commit SHA):</b> A commit hash is the unique ID for any commit in your
+          project. It looks something like b6194c7fcbb11f3c250536425c67b45779458a59. By default, git
+          sets the first 7 characters as a short commit hash i.e. b6194c7. Commands that require a
+          commit hash work as long as you provide the first handful of characters and those
+          characters are unique. For example, the following commands do the same thing:
+          <ul>
+            <li><code>git checkout b6194c7fcbb11f3c250536425c67b45779458a59</code></li>
+            <li><code>git checkout b6194c7fcbb11f3c25</code></li>
+            <li><code>git checkout b6194c7</code></li>
+          </ul>
+        </li>
+      </ul>
+      <br />
+      <p class="center">
+        <b>Basic git command workflow</b>
+        <img src="/assets/git-working-staging-local-remote.jpg" width="700" />
+      </p>
+      <ul>
+        <li>
+          <b>Working directory, staging area:</b> You make changes in the the working directory.
+        </li>
+        <ul>
+          <li>
+            Do <code>git add</code> to move files to the staging area and then
+            <code>git commit</code> to commit changes.
+          </li>
+          <li>
+            Do <code>git reset</code> to move changes from the staging area to the working
+            directory.
+          </li>
+        </ul>
+        <li>
+          <b>Local, remote:</b> You make changes on a local copy of a repository. Developers share
+          code with each other via a remote repository.
+        </li>
+        <ul>
+          <li>Do <code>git push</code> your changes to a remote copy of a repository.</li>
+          <li>Do <code>git pull</code> other people's changes from the remote repository.</li>
+        </ul>
+      </ul>
+
+      <h4 id="common-git-commands">Common git commands</h4>
+      <p>
+        Here are common git commands for day-to-day development. If you've never used git before, I
+        suggest going through
+        <a
+          href="https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/"
+          target="_blank"
+          >a tutorial</a
+        >
+        to set up a repository first.
+      </p>
+      <ul>
+        <li>
+          Type these commands in the terminal. See <a href="terminal-101">Terminal 101</a> to learn
+          the basics.
+        </li>
+        <li>
+          Fill out anything in brackets. For example, to switch to the <code>master</code> branch,
+          do <code>git checkout master</code>.
+        </li>
+        <li>
+          Use <code>git log</code> to find relevant commit hashes. Learn how
+          <code>git log</code> works in your terminal. On Mac, hit Enter to scroll down and q to
+          exit.
+        </li>
+      </ul>
+      <table class="table">
+        <thead>
+          <td>Command</td>
+          <td>Usage</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><pre>git log</pre></td>
+            <td>Show commit history.</td>
+          </tr>
+          <tr>
+            <td><pre>git log -- [file]</pre></td>
+            <td>Show commit history for a file.</td>
+          </tr>
+          <tr>
+            <td><pre>git status</pre></td>
+            <td>View changes to your working directory.</td>
+          </tr>
+          <tr>
+            <td><pre>git help [command]</pre></td>
+            <td>Get more information on a command.</td>
+          </tr>
+          <tr>
+            <td>
+              <pre>git checkout [branch name]</pre>
+            </td>
+            <td>Switch branches.</td>
+          </tr>
+          <tr>
+            <td>
+              <pre>git checkout [commit hash]</pre>
+            </td>
+            <td>Restore a previous version of the code.</td>
+          </tr>
+          <tr>
+            <td><pre>git checkout -b [branch name]</pre></td>
+            <td>Create a new branch with name [branch name].</td>
+          </tr>
+          <tr>
+            <td><pre>git checkout -</pre></td>
+            <td>Go back to the previous place you were at.</td>
+          </tr>
+          <tr>
+            <td><pre>git branch</pre></td>
+            <td>List branches. The asterick shows which branch you're on.</td>
+          </tr>
+          <tr>
+            <td><pre>git branch -d [branch name]</pre></td>
+            <td>Delete the branch with name [branch name].</td>
+          </tr>
+          <tr>
+            <td><pre>git reset --soft [prev commit]</pre></td>
+            <td>Go back to [prev commit] and move changes back to the staging area.</td>
+          </tr>
+          <tr>
+            <td><pre>git revert [commit]</pre></td>
+            <td>Undo changes from a commit.</td>
+          </tr>
+          <tr>
+            <td><pre>git cherry-pick [commit]</pre></td>
+            <td>Grab changes from a commit.</td>
+          </tr>
+          <tr>
+            <td><pre>git add .</pre></td>
+            <td>Add all changes from your working directory to the staging area.</td>
+          </tr>
+          <tr>
+            <td><pre>git add [file...]</pre></td>
+            <td>Add specific files from your working directory to the staging area.</td>
+          </tr>
+          <tr>
+            <td><pre>git commit</pre></td>
+            <td>
+              Add a multiline commit message. See <a href="vim-101">Vim 101</a> for more details.
+            </td>
+          </tr>
+          <tr>
+            <td><pre>git commit -m [message]</pre></td>
+            <td>Add a one line commit message.</td>
+          </tr>
+          <tr>
+            <td><pre>git merge [branch name]</pre></td>
+            <td>Merge [branch name] into your current branch.</td>
+          </tr>
+          <tr>
+            <td><pre>git stash</pre></td>
+            <td>Stash away changes from your working directory.</td>
+          </tr>
+          <tr>
+            <td><pre>git stash apply</pre></td>
+            <td>Apply the most recently stashed changes.</td>
+          </tr>
+          <tr>
+            <td><pre>git blame -- [file]</pre></td>
+            <td>Figure out who wrote each line of a file.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Here are some tips on git commands:</p>
+      <ul>
+        <li>
+          If you see an error like
+          <code
+            >error: commit 2ecd4566cde6ffb8ce5e103eb79e971483d0eaa2 is a merge but no -m option was
+            given</code
+          >, adding <code>-m 1</code> will probably fix it. This lets git know which side of the
+          merge should be considered the parent.
+        </li>
+        <li>
+          When typing a commit hash, if you see an error like
+          <code>error: pathspec 'b61' did not match any file(s) known to git</code>, double-check
+          that you copied the commit hash correctly and provided enough characters.
+        </li>
+        <li>
+          When typing a file path, if you see an error like
+          <code>fatal: pathspec 'writin' did not match any files</code>, double-check that you typed
+          the file path correctly.
+        </li>
+        <li>
+          Add <code>--no-commit</code> when you do a cherry-pick or merge if you don't want to
+          commit the changes.
+        </li>
+        <li>Add <code>--no-verify</code> when you make a commit to bypass any pre-commit hooks.</li>
+      </ul>
+      <h4 id="practical-git-workflows">Practical git workflows</h4>
+      <p>
+        Here are some practical git workflows I use as a software engineer:
+      </p>
+      <ul>
+        <li>
+          <b>Making a feature branch</b> lets you develop on a local copy of the project without
+          messing up the primary version. Feature branches also let developers work on projects in
+          parallel. Once your feature branch is good to go, you can merge it into the master branch.
+          For big features, see the section on
+          <a href="#big-feature-branch">managing a big feature branch</a>.
+        </li>
+        <li>
+          <b>Committing a change</b> lets you track changes as you work. Using descriptive commit
+          messages helps you remember why you made particular changes. I recommend making small,
+          frequent commits so you can save your progress.
+        </li>
+        <li>
+          <b>Keeping a branch up-to-date</b> makes it easier for you to integrate your changes. You
+          can prevent gigantic merge conflicts. This is important if you're working on a big,
+          long-running feature branch. Note that it's a lot easier to use
+          <code>git merge</code> instead of <code>git rebase</code>. That way, you only have to
+          resolve one set of merge conflicts.
+        </li>
+        <li>
+          <b>Resolving merge conflicts</b> is necessary if multiple people touch the same file. See
+          section below on <a href="#fix-merge-conflict">fixing a merge conflict</a> for more
+          details.
+        </li>
+        <li>
+          <b>Cleaning up commit history</b> on a branch can help you keep a feature branch tidy.
+          Don't clean up commit history after you put a branch up for review - it's harder for a
+          reviewer to see changes since their last review.
+          <span class="highlight">Note that <code>git push --force</code> is dangerous</span>.
+        </li>
+        <li>
+          <b>Applying changes between two commits to a new branch</b> helps avoid merge conflicts
+          and makes your code easier to review. Note that you can <code>git cherry-pick</code> each
+          commit, but it is often easier to grab all changes between two commits.
+        </li>
+        <li>
+          <b>Cherry-picking commits to a new branch</b> lets you merge the same set of change to
+          different base branches. For example, you might make changes on a
+          <code>staging</code> branch before merging into <code>master</code>.
+        </li>
+        <li>
+          <b>Reverting a change</b> is helpful when things go wrong. If a recent commit causes an
+          incident, you should revert the change. The example is for reverting a change on
+          <code>master</code>. If you aren't working with a protected branch, you may not need to
+          create another branch for the revert.
+        </li>
+      </ul>
+      <table class="table">
+        <thead>
+          <td>Workflow</td>
+          <td>Commands</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Making a feature branch</td>
+            <td>
+              <pre>git checkout master<br />git pull<br />git checkout -b [branch name]</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>Committing a change</td>
+            <td>
+              <pre>git add [file...]<br />git commit -m [commit message]<br />git push</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>Keeping a branch up-to-date</td>
+            <td>
+              <pre>git checkout master<br />git pull<br />git checkout [branch name]<br />git merge master<br /></pre>
+            </td>
+          </tr>
+          <tr>
+            <td>Resolving merge conflicts</td>
+            <td>
+              <a href="#fix-merge-conflict">Fix the merge conflict in your text editor.</a><br />
+              <pre>git add [file...]<br />git commit -m [commit message]</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>Cleaning up commit history</td>
+            <td>
+              <pre>git reset --soft [prev commit]<br />git commit -m [commit message]<br />git push --force</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Applying changes between two commits to a new branch
+            </td>
+            <td>
+              <pre>git reset --soft [prev commit]<br />git stash<br />git checkout [new branch name]<br />git stash apply</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>Cherry-picking commits to a new branch</td>
+            <td>
+              <pre>git checkout -b [branch name]<br />git cherry-pick [commit]</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>Reverting a change</td>
+            <td>
+              <pre>git checkout master<br />git checkout -b [branch name]<br />git log<br />git revert [faulty commit]</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 id="conclusion">Conclusion</h4>
+      <p>
+        When I first started programming, I struggled to install git and to set up a repository. Git
+        can be confusing at first, but you'll get familiar over time.
+      </p>
+      <p>
+        My biggest piece of advice on git is don't panic and don't blindly copy/paste commands.
+        Typing random commands won't solve the problem and can make it harder to understand the
+        issue. You can review the section on
+        <a href="#basic-git-terminology">basic git terminology</a> and
+        <a href="#common-git-commands">common git commands</a> to understand what you're doing.
+      </p>
+      <p>
+        If you're still confused, ask the Internet. If the first result doesn't work, ask for help.
+        I've found that either the first result solves the problem or something else is going on.
+        Like with a lot of software problems, you should ask for help to resolve your issue and to
+        learn and grow.
+      </p>
+
+      <h4 id="appendix">Appendix</h4>
+      <p>This section elaborates on various git workflows:</p>
+      <ul>
+        <li><a href="#terminal-101">Terminal 101</a></li>
+        <li><a href="#vim-101">Vim 101</a></li>
+        <li><a href="#fix-merge-conflict">Fixing a merge conflict</a></li>
+        <li><a href="#big-feature-branch">Managing a big feature branch</a></li>
+      </ul>
+      <h5 id="terminal-101">Terminal 101</h5>
+      <p>
+        To use git well, you should learn how to use the terminal. To open a terminal on Mac, type
+        command-space and search "terminal".
+      </p>
+      <p>
+        I use a Mac computer and Sublime Text for a text editor. Useful commands may vary depending
+        on your operating system and preferred text editor.
+      </p>
+      <p>
+        Here's a short reference of terminal commands:
+      </p>
+      <table class="table">
+        <thead>
+          <td>Command</td>
+          <td>Usage</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td><pre>pwd</pre></td>
+            <td>Print working directory. Tells you where you are.</td>
+          </tr>
+          <tr>
+            <td><pre>cd [file path]</pre></td>
+            <td>Navigate to a directory.</td>
+          </tr>
+          <tr>
+            <td><pre>cd ~</pre></td>
+            <td>Navigate to the home directory.</td>
+          </tr>
+          <tr>
+            <td><pre>ls</pre></td>
+            <td>List everything in the directory.</td>
+          </tr>
+          <tr>
+            <td>control-R</td>
+            <td>Search previously typed commands.</td>
+          </tr>
+          <tr>
+            <td>tab autocomplete</td>
+            <td>Type something and hit tab to autocomplete.</td>
+          </tr>
+          <tr>
+            <td><pre>open .</pre></td>
+            <td>Open the directory in Finder.</td>
+          </tr>
+          <tr>
+            <td><pre>sublime .</pre></td>
+            <td>Open the directory in Sublime Text.</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>
+          For the <code>sublime</code> command to work, you need to download Sublime Text and follow
+          the command line setup instructions. See
+          <a href="https://www.sublimetext.com/docs/3/osx_command_line.html" target="_blank"
+            >Sublime command line setup instructions</a
+          >.
+        </li>
+        <li>
+          I didn't list any dangerous commands that create, edit, or delete files. You can follow a
+          separate tutorial to expand your knowledge here.
+        </li>
+      </ul>
+      <h5 id="vim-101">Vim 101</h5>
+      <p>Vim is a text editor in your terminal. It looks something like this:</p>
+      <p class="center">
+        <img src="/assets/vim-terminal.png" width="600" />
+      </p>
+      <p>
+        My first experience with Vim was wondering "how do I get out of this thing?". It's confusing
+        at first. In the main mode, tapping on keyboard keys moves the cursor and doesn't add text.
+      </p>
+      <p>
+        Vim is useful for writing git commit messages. Here's a short reference:
+      </p>
+      <table class="table">
+        <thead>
+          <td>What to type</td>
+          <td>Usage</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td>:q! to quit without saving</td>
+            <td>Get out of vim without saving your commit message.</td>
+          </tr>
+          <tr>
+            <td>i to insert</td>
+            <td>Type a commit message in vim.</td>
+          </tr>
+          <tr>
+            <td>esc to go back to the main mode</td>
+            <td>Once you're done typing your commit message.</td>
+          </tr>
+          <tr>
+            <td>:wq! to quit and save</td>
+            <td>Get out of vim and save your commit message.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 id="fix-merge-conflict">Fixing a merge conflict</h5>
+      <p>
+        Usually, Git can merge changes without intervention. Merge conflicts happen when Git doesn't
+        know which changes to keep and asks you to help out.
+      </p>
+      <p>Merge conflicts look scary, but are easy to fix when you get used to it.</p>
+      <p>Here's what a merge conflict looks like in the terminal:</p>
+      <pre>
+  Cat:personal-website elainelin$ git merge practical-git-cheat-sheet
+  Auto-merging writing.html
+  <span class="highlight">CONFLICT (content): Merge conflict in writing.html</span>
+  Automatic merge failed; fix conflicts and then commit the result.
+      </pre>
+      <p>
+        If you read the error message, you see there's a problem with the file
+        <code>writing.html</code>.
+      </p>
+      <p>
+        Open the file in your text editor. Git highlights the merge conflicts with angry carats.
+        Later, to make sure you've fixed all merge conflicts, you can search the repo for all
+        instances of "&lt;&lt;&lt;&lt;" or "&gt;&gt;&gt;&gt;".
+      </p>
+      <pre>
+  &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    &lt;table class="table post-table"&gt;
+  =======
+    &lt;table class="table table-borderless post-table"&gt;
+      &lt;td class="post-date"&gt;May 9, 2021&lt;/td&gt;
+      &lt;td&gt;
+        &lt;a href="/writing/software/practical_git_cheat_sheet.html"
+          &gt;Practical git cheat sheet&lt;/a
+        &gt;
+      &lt;/td&gt;
+  &gt;&gt;&gt;&gt;&gt;&gt;&gt; practical-git-cheat-sheet
+      </pre>
+      <p>
+        It's up to you to figure out which changes to keep or not. In this case, the resolution
+        might look like:
+      </p>
+      <pre>
+    &lt;table class="table post-table"&gt;
+      &lt;td class="post-date"&gt;May 9, 2021&lt;/td&gt;
+      &lt;td&gt;
+        &lt;a href="/writing/software/practical_git_cheat_sheet.html"
+          &gt;Practical git cheat sheet&lt;/a
+        &gt;
+      &lt;/td&gt;
+    </pre
+      >
+      <h5 id="big-feature-branch">Managing a big feature branch</h5>
+      <p>
+        If you're working on a big feature, you can set up a big feature branch. This helps you:
+      </p>
+      <ul>
+        <li>Prevent gigantic PR reviews</li>
+        <li>Make incremental progress</li>
+        <li>Group together related changes</li>
+      </ul>
+      <p class="center">
+        <img src="/assets/big-feature-branch.jpg" width="600" />
+      </p>
+      <ol>
+        <li>Suppose you're working on a big feature and set up feature branch A.</li>
+        <li>As you work on the feature, make branches A', A", etc. off branch A.</li>
+        <li>Merge A', A", etc. into branch A.</li>
+        <li>When all of the work is done, you can merge branch A into master.</li>
+      </ol>
+      <p>Here are some example commands:</p>
+      <table class="table">
+        <thead>
+          <td>Workflow</td>
+          <td>Commands</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Branching off the big feature branch</td>
+            <td>
+              <pre>git checkout [branch A]<br />git pull<br />git checkout -b [branch A']</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>Keeping A' up-to-date with branch A</td>
+            <td>
+              <pre>git checkout [branch A]<br />git pull<br />git checkout [branch A']<br />git merege [branch A]</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
