@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elaine Lin Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/highlight.min.css" />
+    <script src="/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $(".navigation").load("/base/nav.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="navigation"></div>
+    </div>
+    <div class="container">
+      <h2>Automated flashcard generator</h2>
+      <p>
+        Suppose you are learning a language, and you want to create digital flashcards from a vocabulary
+        list. For example, I am learning Chinese, and the vocabulary list looks like:
+      </p>
+      <pre>
+  121 付款/fùkuǎn To Pay
+
+  Qǐngwèn zài nǎr fùkuǎn?
+  请问在哪儿付款？
+
+  Excuse me, where do I pay?
+
+  122 复制/fùzhì To Copy
+
+  Wǒ xiǎng bǎ zhège wénjiànjiā fùzhì dào wǒ de yìngpán lǐ.
+  我想把这个文件夹复制到我的硬盘里。
+
+  I want to copy this folder to my hard disk.
+  ...
+      </pre>
+      <p>
+        One approach is to go through the list and copy/paste the term and definition for each
+        entry. This approach is slow and repetitive. You have to constantly switch between your vocabulary list and your flashcard tool.
+      </p>
+      <p>
+        Another approach is to use an automated flashcard generator. You can invest a little bit of
+        time upfront and let technology to make the flashcards for you. I've created
+        <a href="https://quizlet.com/elainewlin/sets" target="_blank">50+ flashcard sets</a> for
+        Chinese, and each set only takes about 2 minutes to create. Here's how it works.
+      </p>
+
+      <p>
+        Instead of creating flashcards one by one, you can import a pre-formatted list. In Quizlet,
+        the option is called "Import from Word, Excel, Google Docs, etc.". The steps are:
+      </p>
+      <ol>
+        <li>Copy/paste an entire vocabulary list.</li>
+        <li>Specify what separates the term and definition and what separates the cards.</li>
+        <li>Preview + create the flashcards.</li>
+      </ol>
+      <p>For example, you can easily import a vocabulary list like:</p>
+<pre>
+  121 付款/fùkuǎn To Pay
+  122 复制/fùzhì To Copy
+  ...
+</pre>
+      <p>
+        This works because the format is consistent. A forward slash (/) separates the term and
+        definition, and a new line (\n) separates each card. However, if the format is inconsistent,
+        the tool will create invalid flashcards. Depending on the vocabulary list format, you may
+        need to edit the list so it's more consistent. To do so, you can either 1) make the changes
+        yourself or 2) write code to make the changes.
+      </p>
+
+      <p><b>Make the changes yourself</b></p>
+      <p>
+        It is faster to make text changes in a code editor like Sublime Text. You can download
+        Sublime <a href="https://www.sublimetext.com/download" target="_blank">here</a>. Sublime and
+        other code editors support keyboard shortcuts. These shortcuts aren't available in regular
+        text editors like TextEdit or Pages on a Mac. In this example, you can:
+      </p>
+      <ol>
+        <li>Highlight a forward slash.</li>
+        <li>Type Cmd - D to select all instances of a forward slash.</li>
+        <li>Press the arrow keys to move multiple cursors.</li>
+        <li>Type Cmd - X to cut an entire line.</li>
+      </ol>
+      <p>This lets you quickly remove unnecessary information and format the list. Here's an example video.</p>
+      <p>
+        <video controls="controls" width="750" name="Video Name">
+          <source src="/assets/text-editor.mov" />
+        </video>
+      </p>
+      <p><b>Write code to make the changes</b></p>
+      <p>
+        You can also write code to make the changes for you. This is useful if it's hard to make
+        changes yourself or if you're persnickety about flashcard formatting. For example, suppose
+        you want flashcards like:
+      </p>
+
+<pre>
+  付款;fùkuǎn, to pay
+  复制;fùzhì, to copy
+</pre
+      >
+      <p>The changes here are:</p>
+      <ul>
+        <li>
+          A semicolon (;) separates the term and definition. This character is uncommon, so it helps
+          make flashcard creation more reliable.
+        </li>
+        <li>The English definition is lowercase i.e. "to pay" instead of "To Pay".</li>
+        <li>
+          A comma separates the pinyin, the phonetic pronunciation, from the English definition.
+        </li>
+      </ul>
+      <p>
+        If you learn basic programming, you can write code to automate these changes. I recommend
+        you start by learning a scripting language like Python, NodeJS, or Ruby. These languages are
+        relatively easy to learn and come in handy for short code scripts.
+      </p>
+      <p>
+        For example, here's a video with a Python code sample. When you run the code, it formats the vocabulary
+        list into the desired flashcard format. This saves a lot of time for long vocabulary lists.
+      </p>
+      <p>
+        <video controls="controls" width="750" name="Video Name">
+          <source src="/assets/flash-card-code.mov" />
+        </video>
+      </p>
+      <p>
+        With a little upfront investment, you can save time and frustration on
+        repetitive tasks. With a little bit of code, you can build even more efficient and robust
+        solutions.
+      </p>
+      <p><b>Appendix</b></p>
+      <p>Here is the Python code.</p>
+      <pre><code class="language-python">
+  # Define the data.
+  data = """121 付款/fùkuǎn To Pay
+
+  Qǐngwèn zài nǎr fùkuǎn?
+  请问在哪儿付款？
+
+  Excuse me, where do I pay?
+
+  122 复制/fùzhì To Copy
+
+  Wǒ xiǎng bǎ zhège wénjiànjiā fùzhì dào wǒ de yìngpán lǐ.
+  我想把这个文件夹复制到我的硬盘里。
+
+  I want to copy this folder to my hard disk."""
+
+  # Look at each line of the data.
+  lines = data.split("\n")
+  for l in lines:
+      # Check if the line has the vocab term.
+      # This filters out sentences and empty lines.
+      if "/" in l:
+          # Split the line on the space i.e.
+          # 121 付款/fùkuǎn To Pay => ["121", "付款/fùkuǎn", "To Pay"]
+          # Then, find the term, pin_yin, and english_def.
+          split_line = l.split(" ")
+          [term, pin_yin] = split_line[1].split("/")
+          english_def = " ".join(split_line[2:])
+          print("{};{}, {}".format(term, pin_yin, english_def.lower()))
+      </code></pre>
+    </div>
+  </body>
+</html>
