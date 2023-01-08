@@ -1,3 +1,9 @@
+@media screen and (max-device-width: 600px) {
+  .social-section {
+    display: none;
+  }
+}
+
 .portrait {
   width: 350px;
   max-width: 100%;
@@ -13,7 +19,7 @@
   display: inline-block;
 }
 
-.navbar-logo > .navbar-link {
+.navbar-logo>.navbar-link {
   color: #000;
 }
 
@@ -56,7 +62,7 @@
   margin: auto;
 }
 
-.post-table > tbody > tr > td {
+.post-table>tbody>tr>td {
   padding: 0;
 }
 

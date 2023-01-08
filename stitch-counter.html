@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Elaine Lin Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/stitch-counter.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="./js/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".navigation").load("/base/nav.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header">
+    <div class="navigation"></div>
+  </div>
+  <div class="container">
+    <div class="count-section" id="activeSection">
+      <span class="text-x-large" id="activeSectionName"></span>
+      <div class="text-large count-row">
+        <span class="minus-buttons">
+          <button class="btn minus-button big-button" onclick="subtractRow()">
+            -1
+          </button>
+        </span>
+        <span class="count-label">Row count: <span id="rowCount"></span></span>
+        <button class="btn add-button big-button" onclick="addRow()">
+          +1
+        </button>
+      </div>
+      <div class="text-large count-row">
+        <span class="minus-buttons">
+          <button class="btn minus-button big-button" onclick="updateStitch(-10)">
+            -10
+          </button>
+          <button class="btn minus-button big-button margin-left" onclick="updateStitch(-1)">
+            -1
+          </button>
+        </span>
+        <span class="count-label">Stitch count: <span id="stitchCount"></span></span>
+        <button class="btn add-button big-button" onclick="updateStitch(1)">
+          +1
+        </button>
+        <button class="btn add-button big-button margin-left" onclick="updateStitch(10)">
+          +10
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <form class="form-inline" id="newSectionForm">
+        <label class="sr-only" for="sectionName">Section Name</label>
+        <input type="text" class="form-control medium-input" id="sectionName" placeholder="Name" />
+        <button type="submit" class="btn btn-outline-secondary medium-button">
+          Add Section
+        </button>
+      </form>
+    </div>
+    <div class="row overview-section">
+      <table class="table overview-table" id="sectionTable">
+        <thead>
+          <tr>
+            <th scope="col" class="section-header">Section</th>
+            <th scope="col">History</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="delete-section">
+        <button class="btn btn-outline-secondary" onclick="deleteSection()">
+          Delete section
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./js/stitch-counter.js"></script>
+
+</html>
