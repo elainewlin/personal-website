@@ -19,20 +19,16 @@
   padding-bottom: 96px;
 }
 
-.minus-buttons {
-  display: inline-block;
-  text-align: right;
-  width: 100px;
-}
-
 .count-row {
   margin-top: 16px;
   margin-bottom: 24px;
 }
 
 .count-label {
-  display: inline-block;
-  text-align: center;
+  margin-bottom: 4px;
+}
+
+.count-number {
   margin-left: 2px;
   margin-right: 2px;
 }
@@ -43,10 +39,10 @@
 
 .big-button {
   font-size: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .add-button {
@@ -76,10 +72,10 @@
 .delete-section {
   margin-left: 16px;
   margin-top: 64px;
+  margin-bottom: 32px;
 }
 
 .medium-input {
-  font-size: 16px;
   padding-top: 20px;
   padding-bottom: 20px;
   width: 150px;
@@ -88,7 +84,6 @@
 }
 
 .medium-button {
-  font-size: 14px;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-left: 20px;

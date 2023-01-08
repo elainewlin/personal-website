@@ -26,32 +26,34 @@
     <div class="count-section" id="activeSection">
       <span class="text-x-large" id="activeSectionName"></span>
       <div class="text-large count-row">
-        <span class="minus-buttons">
+        <div class="count-label">Row count</div>
+        <div>
           <button class="btn minus-button big-button" onclick="subtractRow()">
             -1
           </button>
-        </span>
-        <span class="count-label">Row count: <span id="rowCount"></span></span>
-        <button class="btn add-button big-button" onclick="addRow()">
-          +1
-        </button>
+          <span id="rowCount" class="count-number"></span>
+          <button class="btn add-button big-button" onclick="addRow()">
+            +1
+          </button>
+        </div>
       </div>
       <div class="text-large count-row">
-        <span class="minus-buttons">
+        <div class="count-label">Stitch count</div>
+        <div>
           <button class="btn minus-button big-button" onclick="updateStitch(-10)">
             -10
           </button>
           <button class="btn minus-button big-button margin-left" onclick="updateStitch(-1)">
             -1
           </button>
-        </span>
-        <span class="count-label">Stitch count: <span id="stitchCount"></span></span>
-        <button class="btn add-button big-button" onclick="updateStitch(1)">
-          +1
-        </button>
-        <button class="btn add-button big-button margin-left" onclick="updateStitch(10)">
-          +10
-        </button>
+          <span id="stitchCount" class="count-number"></span>
+          <button class="btn add-button big-button" onclick="updateStitch(1)">
+            +1
+          </button>
+          <button class="btn add-button big-button margin-left" onclick="updateStitch(10)">
+            +10
+          </button>
+        </div>
       </div>
     </div>
     <div class="row">
