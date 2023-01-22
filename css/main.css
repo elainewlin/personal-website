@@ -73,14 +73,13 @@
 }
 
 a {
-  color: #212427;
-  font-weight: 500;
+  color: #327699;
 }
 
 a:hover {
-  color: #212427;
+  color: #327699;
   font-weight: 600;
-  text-decoration-style: dashed;
+  text-decoration: none;
 }
 
 .text-x-large {
