@@ -1,157 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Elaine Lin Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
 
-    <script>
-      $(document).ready(function() {
-        $(".navigation").load("/base/nav.html");
-      });
-    </script>
-  </head>
+<head>
+  <title>Elaine Lin Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="image" property="og:image" content="/assets/learning-software-architecture-bird.png" />
+  <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
-  <body>
-    <div id="header">
-      <div class="navigation"></div>
-    </div>
-    <div class="container">
-      <h2>Learning software architecture</h2>
-      <p>
-        How can you grow in your career as a software engineer? One way is strengthening your
-        technical background and learning software architecture. Software architecture is about
-        designing and building systems. For example, imagine building a site like Netflix or
-        Facebook from scratch.
-      </p>
-      <p>
-        Software architecture can be daunting. There are lots of components and concepts to
-        understand. In this post, I'll break down how to learn software architecture so it's clearer
-        and more approachable.
-      </p>
-      <p>
-        To start, it's okay to be confused about architecture. Your level of understanding will
-        increase as you progress in your career. When I was in college, I took a web programming
-        course, and they explained how to build a website. It was my first time learning about web
-        technologies, and it didn't make that much sense. As I got my hands dirty and built my own
-        websites, I got a better sense of how things worked and fit together.
-      </p>
-      <p>
-        To learn how to build a big system, start small. As you grow more experienced, you'll work
-        on larger and larger projects. Before working on software architecture, it's helpful to
-        first make smaller changes. This helps you understand individual components in more detail
-        and develop your technical skills. For example:
-      </p>
-      <ol>
-        <li>
-          A starter task is a friendly introduction to a codebase. You may change the color of a
-          button or tweak some text on a page.
-        </li>
-        <li>
-          The next step up is building a small piece of functionality. This helps you understand a
-          component in more detail. You may build a signup form or add the logic for creating new
-          users.
-        </li>
-        <li>
-          Owning a project end to end helps you understand how pieces fit together. Instead of
-          working on pieces of the signup flow, you may own the whole project from start to finish.
-        </li>
-      </ol>
-      <p>
-        Owning a project teaches you a lot.
-      </p>
-      <ul>
-        <li>
-          During project planning, you learn about different approaches for solving a problem. You
-          get practice thinking through pros/cons and figuring out what's best to do in your
-          scenario.
-        </li>
-        <li>
-          Other folks can provide feedback. More experienced engineers can point out system-level
-          issues you may have missed. For example, they can encourage you to think about the
-          error-cases. What happens if various parts of the system go down? A product manager or
-          designer can help you think about how to best handle user flows.
-        </li>
-        <li>
-          You learn from your mistakes. Learning any new skill requires trial and error. If your
-          system collapses under duress, then you'll learn what not to do in the future. For
-          example, at Digit, I worked on building an onboarding flow, and nobody could sign up at
-          first. Improving the success rate taught me a lot about how to design systems and launch
-          projects.
-        </li>
-      </ul>
-      <p>
-        Many software architecture concepts are more obvious when you work at a company. For
-        example:
-      </p>
+  <script>
+    $(document).ready(function () {
+      $(".navigation").load("/base/nav.html");
+    });
+  </script>
+</head>
 
-      <ul>
-        <li>
-          <b>Scalability</b> is about how many people use your system and how it responds to
-          increased traffic. For example, the "ChatGPT is at capacity right now" error message
-          indicates ChatGPT is having a scalability issue. If you work on a popular system like
-          ChatGPT, you need to handle lots of people accessing your site at once. You don't tend to
-          run into this on smaller projects with fewer users.
-        </li>
-        <li>
-          <b>Reliability</b> is about if your system stays online and how it handles errors. For
-          example, after Musky acquired Twitter, people ran into all sorts of reliability issues and
-          bugs. To prevent an internet hullabaloo, you need to handle errors with grace and prevent
-          incidents.
-        </li>
-        <li>
-          <b>Maintainability</b> is about how easy it is to make changes to your system. If you
-          don't make changes after a class project is due, then long-term maintainability is less
-          important. At a company, you work with a large enduring codebase. You can see what people
-          wrote in the past. Did they build a solid foundation, or did they cobble something
-          together with sticks and duct tape? When you make changes, do you try to repair the
-          foundation or hack something together?
-        </li>
-      </ul>
-      <p>
-        Reading helps fill in gaps in your knowledge and learn concepts in more depth. Technical
-        reading feels different from reading for fun. It's brain-intensive and slow-going. While
-        reading a technical book, I find it helpful to take notes. For instance, after you read a
-        paragraph, try to summarize it in your own words. That helps you check your understanding
-        and prevents you from zoning off.
-      </p>
-      <p>Two books I recommend are:</p>
-      <ul>
-        <li>
-          <a
-            href="https://www.goodreads.com/book/show/23615147-web-scalability-for-startup-engineers"
-            target="_blank"
-            >Web Scalability for Startup Engineers</a
-          >
-          - This book talks about building a website from scratch and how to design systems to work
-          for lots of people. It helps you understand the core concepts and best practices used
-          here.
-        </li>
-        <li>
-          <a
-            href="https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications"
-            target="_blank"
-            >Designing Data-Intensive Applications</a
-          >
-          - This book explains data technologies in depth. It's dense and slow to read - I could
-          read about 8-10 pages per hour. If you take your time, you'll learn a lot from this book.
-        </li>
-      </ul>
-      <p>
-        To improve accountability, you can start a book club. Unlike a recreational book club,
-        you'll want more frequent check-ins. For instance, you can read a chapter (or part of a
-        chapter) every week or two.
-      </p>
-      <p>
-        Learning software architecture takes time and patience. Through working, owning projects,
-        and technical reading, you can learn the skill bit by bit. This will help you decode
-        buzzwords, design systems, and ultimately expand your influence as a software engineer.
-      </p>
-    </div>
-  </body>
+<body>
+  <div id="header">
+    <div class="navigation"></div>
+  </div>
+  <div class="container">
+    <h2>Learning software architecture</h2>
+    <p class="center">
+      <img src="/assets/learning-software-architecture-bird.png" width="300"
+        alt="Serious-looking blue bird at a chalk board with some gibberish." />
+    </p>
+    <p>
+      How can you grow in your career as a software engineer? One way is strengthening your
+      technical background and learning software architecture. Software architecture is about
+      designing and building systems. For example, imagine building a site like Netflix or
+      Facebook from scratch.
+    </p>
+    <p>
+      Software architecture can be daunting. There are lots of components and concepts to
+      understand. In this post, I'll break down how to learn software architecture so it's clearer
+      and more approachable.
+    </p>
+    <p>
+      To start, it's okay to be confused about architecture. Your level of understanding will
+      increase as you progress in your career. When I was in college, I took a web programming
+      course, and they explained how to build a website. It was my first time learning about web
+      technologies, and it didn't make that much sense. As I got my hands dirty and built my own
+      websites, I got a better sense of how things worked and fit together.
+    </p>
+    <p>
+      To learn how to build a big system, start small. As you grow more experienced, you'll work
+      on larger and larger projects. Before working on software architecture, it's helpful to
+      first make smaller changes. This helps you understand individual components in more detail
+      and develop your technical skills. For example:
+    </p>
+    <ol>
+      <li>
+        A starter task is a friendly introduction to a codebase. You may change the color of a
+        button or tweak some text on a page.
+      </li>
+      <li>
+        The next step up is building a small piece of functionality. This helps you understand a
+        component in more detail. You may build a signup form or add the logic for creating new
+        users.
+      </li>
+      <li>
+        Owning a project end to end helps you understand how pieces fit together. Instead of
+        working on pieces of the signup flow, you may own the whole project from start to finish.
+      </li>
+    </ol>
+    <p>
+      Owning a project teaches you a lot.
+    </p>
+    <ul>
+      <li>
+        During project planning, you learn about different approaches for solving a problem. You
+        get practice thinking through pros/cons and figuring out what's best to do in your
+        scenario.
+      </li>
+      <li>
+        Other folks can provide feedback. More experienced engineers can point out system-level
+        issues you may have missed. For example, they can encourage you to think about the
+        error-cases. What happens if various parts of the system go down? A product manager or
+        designer can help you think about how to best handle user flows.
+      </li>
+      <li>
+        You learn from your mistakes. Learning any new skill requires trial and error. If your
+        system collapses under duress, then you'll learn what not to do in the future. For
+        example, at Digit, I worked on building an onboarding flow, and nobody could sign up at
+        first. Improving the success rate taught me a lot about how to design systems and launch
+        projects.
+      </li>
+    </ul>
+    <p>
+      Many software architecture concepts are more obvious when you work at a company. For
+      example:
+    </p>
+
+    <ul>
+      <li>
+        <b>Scalability</b> is about how many people use your system and how it responds to
+        increased traffic. For example, the "ChatGPT is at capacity right now" error message
+        indicates ChatGPT is having a scalability issue. If you work on a popular system like
+        ChatGPT, you need to handle lots of people accessing your site at once. You don't tend to
+        run into this on smaller projects with fewer users.
+      </li>
+      <li>
+        <b>Reliability</b> is about if your system stays online and how it handles errors. For
+        example, after Musky acquired Twitter, people ran into all sorts of reliability issues and
+        bugs. To prevent an internet hullabaloo, you need to handle errors with grace and prevent
+        incidents.
+      </li>
+      <li>
+        <b>Maintainability</b> is about how easy it is to make changes to your system. If you
+        don't make changes after a class project is due, then long-term maintainability is less
+        important. At a company, you work with a large enduring codebase. You can see what people
+        wrote in the past. Did they build a solid foundation, or did they cobble something
+        together with sticks and duct tape? When you make changes, do you try to repair the
+        foundation or hack something together?
+      </li>
+    </ul>
+    <p>
+      Reading helps fill in gaps in your knowledge and learn concepts in more depth. Technical
+      reading feels different from reading for fun. It's brain-intensive and slow-going. While
+      reading a technical book, I find it helpful to take notes. For instance, after you read a
+      paragraph, try to summarize it in your own words. That helps you check your understanding
+      and prevents you from zoning off.
+    </p>
+    <p>Two books I recommend are:</p>
+    <ul>
+      <li>
+        <a href="https://www.goodreads.com/book/show/23615147-web-scalability-for-startup-engineers" target="_blank">Web
+          Scalability for Startup Engineers</a>
+        - This book talks about building a website from scratch and how to design systems to work
+        for lots of people. It helps you understand the core concepts and best practices used
+        here.
+      </li>
+      <li>
+        <a href="https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications"
+          target="_blank">Designing Data-Intensive Applications</a>
+        - This book explains data technologies in depth. It's dense and slow to read - I could
+        read about 8-10 pages per hour. If you take your time, you'll learn a lot from this book.
+      </li>
+    </ul>
+    <p>
+      To improve accountability, you can start a book club. Unlike a recreational book club,
+      you'll want more frequent check-ins. For instance, you can read a chapter (or part of a
+      chapter) every week or two.
+    </p>
+    <p>
+      Learning software architecture takes time and patience. Through working, owning projects,
+      and technical reading, you can learn the skill bit by bit. This will help you decode
+      buzzwords, design systems, and ultimately expand your influence as a software engineer.
+    </p>
+  </div>
+</body>
+
 </html>
