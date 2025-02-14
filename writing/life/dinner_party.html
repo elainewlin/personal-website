@@ -1,181 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Elaine Lin Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Elaine Lin" />
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
-<head>
-  <title>Elaine Lin Portfolio</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".navigation").load("/base/nav.html");
+      });
+    </script>
+  </head>
 
-  <script>
-    $(document).ready(function () {
-      $(".navigation").load("/base/nav.html");
-    });
-  </script>
-</head>
+  <body>
+    <div id="header">
+      <nav class="navigation"></nav>
+    </div>
 
-<body>
-  <div id="header">
-    <nav class="navigation"></nav>
-  </div>
+    <div class="container">
+      <h2>How to host a dinner party</h2>
 
-  <div class="container">
-    <h2>How to host a dinner party</h2>
+      <p class="center">
+        <img
+          src="/assets/dinner-party-calendar-hold.png"
+          width="400"
+          alt="A Google calendar invite for Hold: Dinner Party. The invite includes Elaine and Caleb and repeats every 4 weeks on Saturday."
+          title="We like calendar invites."
+        />
+      </p>
+      <br />
+      <p>
+        Since May 2021, my partner and I have hosted a dinner a month. It's an excuse to see
+        friends. We've had thoughtful conversations, shared bad jokes, and played music and board
+        games. To host dinner, you need:
+      </p>
+      <ol>
+        <li><a href="#people">People</a></li>
+        <li><a href="#confidence">Confidence</a></li>
+        <li><a href="#locale">Locale</a></li>
+        <li><a href="#food">Food</a></li>
+      </ol>
+      <h3 id="people">People</h3>
+      <b>Who to invite</b>
+      <p>
+        Make a big list of people you'd like to know better. This can include friends, a neighbor
+        with a cute dog, a friend of a friend who likes backpacking, etc.
+      </p>
+      <p>
+        From that list, pick a set of people. For example:
+      </p>
+      <ul>
+        <li>A couple.</li>
+        <li>Folks who play music.</li>
+        <li>Mutual friends of Alice.</li>
+        <li>Former coworkers.</li>
+        <li>A random group of 4.</li>
+        <li>Your nearby neighbors.</li>
+      </ul>
+      <b>How to invite</b>
+      <p>
+        Pick an arbitrary date. Dinner is an excuse to see friends, so you don't need a special
+        date. There are 2 scheduling approaches:
+      </p>
+      <ol>
+        <li>
+          Decide on a fixed date/time. Send out a broad invite. i.e. Hi! Would you like to come over
+          for dinner? We're hosting dinner with a few folks on Friday 4/8 at 6 PM.
+        </li>
+        <li>
+          Decide on a rough date/time. Coordinate with another party to decide the day. i.e. Hi!
+          Would you like to come over for dinner next weekend?
+        </li>
+      </ol>
+      <p>
+        Write and send invites.
+        <a href="https://www.speakconfidentenglish.com/invite-someone-in-english/" target="_blank"
+          >Speak Confident English</a
+        >
+        has some good examples. Communicate any relevant boundaries i.e. dietary preferences,
+        allergies, dry household. We tells guests "If you bring something, anything vegan is good.
+        i.e. fruit, bread, wine."
+      </p>
+      <p>
+        You can also ask ChatGPT to write an invitation for you. It tries.
+      </p>
+      <p class="center">
+        <img
+          src="/assets/chat-gpt-dinner-invite.png"
+          width="600"
+          alt="A conversation thread with ChatGPT. I ask 'write a message to casually invite somebody for dinner on saturday or sunday'. ChatGPT responds 'Hey! I hope this message finds you well. I was wondering if you'd be free to join me for dinner on either Saturday or Sunday? I'm thinking of trying out that new restaurant downtown and it would be great to have some company. Let me know if either of those days work for you and we can figure out a time that works best. Looking forward to seeing you! Best, [Your Name]'. I ask 'can you make it more casual'. ChatGPT responses 'Sure! Here's a revised version: Hey [Name], What's up? I was hoping to grab some grub at that new restaurant downtown on either Saturday or Sunday and was wondering if you'd be down to join me? It's been a while since we caught up and it would be great to hang out and try some new food. Let me know if either of those days work for you and we can figure out a time that works best. Talk to you soon, [Your Name]'"
+          title="The most casual"
+        />
+      </p>
+      <br />
+      <p>
+        If you're inviting a neighbor and don't have their number, you can leave a note under the
+        door. Include your contact information so they can RSVP. This is also useful in case of
+        emergencies.
+      </p>
+      <b>Activities</b>
+      <p>
+        If you don't know people well, it's helpful to have some easy-to-learn games. Here are some
+        suggestions:
+      </p>
+      <ul>
+        <li>
+          <a
+            href="https://smile.amazon.com/Pandasaurus-Games-201809PAN-Mind-Card/dp/B07C4F3KLF"
+            target="_blank"
+            >The Mind</a
+          >
+          - A collaborative card game. The card are numbered 1-100. Each player gets cards. You try
+          to put the cards down in numerical order without talking.
+        </li>
+        <li>
+          <a href="https://smile.amazon.com/Sushi-Go-Pick-Pass-Card/dp/B00J57VU44" target="_blank"
+            >Sushi Go</a
+          >
+          - A card-passing game. You pass around face-down cards. Each turn, you pick a card and
+          pass the rest of the set. You want to collect a set of cards with the most points.
+        </li>
+        <li>
+          <a
+            href="https://smile.amazon.com/Indie-Boards-and-Cards-COU1IBC/dp/B00GDI4HX4"
+            target="_blank"
+            >Coup</a
+          >
+          - A hidden traitor game. You start with two lives and two hidden roles. Each role allows
+          you to do certain actions, but you can also lie about your roles. Your goal is to not die.
+        </li>
+        <li>
+          <a
+            href="https://smile.amazon.com/Bananagrams-1295-Banagrams-Multi-Award-Winning-Word/dp/1932188126"
+            target="_blank"
+            >Bananagrams</a
+          >
+          - A word game. You can build mini scrabble boards. You can also play a word-stealing
+          variant, snatch. In snatch, you flip tiles one by one and try to make words from the
+          available letters.
+        </li>
+      </ul>
+      <h3 id="confidence">Confidence</h3>
+      <p>
+        My least favorite part about hosting is sending invites and waiting for responses. After I
+        send an invite, I feel self-conscious. I suspect it's part of being human. Here's what helps
+        me:
+      </p>
+      <ul>
+        <li>
+          <b>Logic:</b> There's nothing to lose. If you send an invite and nothing happens, then
+          you're no worse off from when you started. Besides the temporary uncertainty, there's no
+          actual harm to you.
+        </li>
+        <li>
+          <b>A low bar for success:</b> For any event I host, I'm pleased if there's at least one
+          other person there. In general, we host a lot of small dinners. Of the 20 dinner parties
+          we've hosted, 10 have had 2 guests. See the graph below.
+        </li>
+        <li>
+          <b>Attempted nonchalance:</b> I can't control how people respond, so I try to disconnect
+          my mood from their behavior. This is hard. It helps to have low tolerance for
+          ghosting/flakiness. If somebody is unresponsive or noncommittal, I stop reaching out.
+          There are lots of people in the world, and it's okay if some of them don't like you.
+        </li>
+      </ul>
+      <img
+        src="/assets/dinner-party-guest-frequency.png"
+        width="600"
+        class="center"
+        alt="A graph of 20 dinner parties. There's 1 dinner party with 1 guest, 10 with 2 guests, 3 with 3 guests, 3 with 6 guests, 2 with 7 guests, 1 with 9 guests."
+        title="I like charts."
+      />
 
-    <p class="center">
-      <img src="/assets/dinner-party-calendar-hold.png" width="400"
-        alt="A Google calendar invite for Hold: Dinner Party. The invite includes Elaine and Caleb and repeats every 4 weeks on Saturday."
-        title="We like calendar invites." />
-    </p>
-    <br />
-    <p>
-      Since May 2021, my partner and I have hosted a dinner
-      a month. It's an excuse to see friends. We've had thoughtful conversations, shared bad jokes, and played music and
-      board games. To host dinner, you need:
-    <ol>
-      <li><a href="#people">People</a></li>
-      <li><a href="#confidence">Confidence</a></li>
-      <li><a href="#locale">Locale</a></li>
-      <li><a href="#food">Food</a></li>
-    </ol>
-    </p>
-    <h3 id="people">People</h3>
-    <b>Who to invite</b>
-    <p>
-      Make a big list of people you'd like to know better. This can include friends, a neighbor
-      with a cute dog, a friend of a friend who likes backpacking, etc.
-    </p>
-    <p>
-      From that list, pick a set of people. For example:
-    <ul>
-      <li>A couple.</li>
-      <li>Folks who play music.</li>
-      <li>Mutual friends of Alice.</li>
-      <li>Former coworkers.</li>
-      <li>A random group of 4.</li>
-      <li>Your nearby neighbors.</li>
-    </ul>
-    </p>
-    <b>How to invite</b>
-    <p>
-      Pick an arbitrary date. Dinner is an excuse to see friends, so you don't need a special date. There are 2
-      scheduling approaches:
-    <ol>
-      <li>Decide on a fixed date/time. Send out a broad invite. i.e. Hi! Would you like to come over for dinner? We're
-        hosting dinner with a few folks on Friday 4/8 at 6 PM.</li>
-      <li>Decide on a rough date/time. Coordinate with another party to decide the day. i.e. Hi! Would you like to come
-        over for dinner next weekend?</li>
-    </ol>
-    </p>
-    <p>
-      Write and send invites. <a href="https://www.speakconfidentenglish.com/invite-someone-in-english/"
-        target="_blank">Speak Confident English</a> has some good examples. Communicate any relevant boundaries i.e.
-      dietary preferences, allergies, dry household. We tells guests "If you bring something, anything vegan is good.
-      i.e. fruit, bread, wine."
-
-    </p>
-    <p>
-      You can also ask ChatGPT to write an invitation for you. It tries.
-    </p>
-    <p class="center">
-      <img src="/assets/chat-gpt-dinner-invite.png" width="600"
-        alt="A conversation thread with ChatGPT. I ask 'write a message to casually invite somebody for dinner on saturday or sunday'. ChatGPT responds 'Hey! I hope this message finds you well. I was wondering if you'd be free to join me for dinner on either Saturday or Sunday? I'm thinking of trying out that new restaurant downtown and it would be great to have some company. Let me know if either of those days work for you and we can figure out a time that works best. Looking forward to seeing you! Best, [Your Name]'. I ask 'can you make it more casual'. ChatGPT responses 'Sure! Here's a revised version: Hey [Name], What's up? I was hoping to grab some grub at that new restaurant downtown on either Saturday or Sunday and was wondering if you'd be down to join me? It's been a while since we caught up and it would be great to hang out and try some new food. Let me know if either of those days work for you and we can figure out a time that works best. Talk to you soon, [Your Name]'"
-        title="The most casual" />
-    </p>
-    <br />
-    <p>
-      If you're inviting a neighbor and don't have their number, you can leave a note under the door. Include your
-      contact information so they can RSVP. This is also useful in case of emergencies.
-    </p>
-    <b>Activities</b>
-    <p>If you don't know people well, it's helpful to have some easy-to-learn games. Here are some suggestions:</p>
-    <ul>
-      <li><a href="https://smile.amazon.com/Pandasaurus-Games-201809PAN-Mind-Card/dp/B07C4F3KLF" target="_blank">The
-          Mind</a> - A collaborative card game. The card are numbered 1-100. Each player gets cards. You try to put the
-        cards down in numerical order without talking.</li>
-      <li><a href="https://smile.amazon.com/Sushi-Go-Pick-Pass-Card/dp/B00J57VU44" target="_blank">Sushi Go</a> - A
-        card-passing game. You pass around face-down cards. Each turn, you pick a card and pass the rest of the set. You
-        want to collect a set of cards with the most points.</li>
-      <li><a href="https://smile.amazon.com/Indie-Boards-and-Cards-COU1IBC/dp/B00GDI4HX4" target="_blank">Coup</a> - A
-        hidden traitor game. You start with two lives and two hidden roles. Each role allows you to do certain actions,
-        but you can also lie about your roles. Your goal is to not die.
-      </li>
-      <li><a href="https://smile.amazon.com/Bananagrams-1295-Banagrams-Multi-Award-Winning-Word/dp/1932188126"
-          target="_blank">Bananagrams</a> - A word game. You can build mini scrabble boards. You can also play a
-        word-stealing variant, snatch. In snatch, you flip tiles one by one and try to make words from the available
-        letters.</li>
-    </ul>
-    <h3 id="confidence">Confidence</h3>
-    <p>
-      My least favorite part about hosting is sending invites and waiting for responses. After I send an invite, I feel
-      self-conscious. I suspect it's part of being human. Here's what helps me:
-    </p>
-    <ul>
-      <li><b>Logic:</b> There's nothing to lose. If you send an invite and nothing happens, then you're no worse off
-        from when you started. Besides the temporary uncertainty, there's no actual harm to you.</li>
-      <li><b>A low bar for success:</b> For any event I host, I'm pleased if there's at least one other person there. In
-        general, we host a lot of small dinners. Of the 20 dinner parties we've hosted, 10 have had 2 guests. See the
-        graph below.
-      </li>
-      <li><b>Attempted nonchalance:</b> I can't
-        control how people respond, so I try to disconnect my mood from their behavior. This is hard. It
-        helps to have low tolerance for ghosting/flakiness. If somebody is unresponsive or noncommittal, I stop
-        reaching out. There are lots of people in the world, and it's okay if some of them don't like you.
-      </li>
-    </ul>
-    <img src="/assets/dinner-party-guest-frequency.png" width="600" class="center"
-      alt="A graph of 20 dinner parties. There's 1 dinner party with 1 guest, 10 with 2 guests, 3 with 3 guests, 3 with 6 guests, 2 with 7 guests, 1 with 9 guests."
-      title="I like charts." />
-
-    <h3 id="locale">Locale</h3>
-    <p>
-      Scope out your living space. Where do you want guests to be? We close off the bedroom, which leaves about 400 sq
-      ft of space in the living room and kitchen. Our max capacity is 9 guests before we think it's too loud and
-      squished. Your tolerance may vary
-    </p>
-    <p>
-      If you have a small space, open up as much room as possible. It helps to
-      remove items from the floor and push big items towards the walls. That way, there's more open area for folks to
-      move and mingle.
-    </p>
-    <h3 id="food">Food</h3>
-    <p>
-      The food is the least important part. I've noticed that folks who don't cook
-      are often self-conscious at dinner parties, but there's no reason to be. I'm chuffed if people bring
-      no-cook items like wine, fruit, chocolate, chips/guacamole. Food can be simple. It's most important that
-      it's palatable and plentiful.
-    </p>
-    <p>
-      I'd recommend preparing something
-      well within your cooking skill-level. I find
-      it stressful to try a new, elaborate recipe under time pressure when I'm expecting guests. If you do try something
-      and it goes awry, then that's okay too. If worst comes to worst, you'll have a funny story to tell and you can all
-      get takeout or eat lots of snacks.
-    </p>
-    <p>
-      Even if you don't cook, you can put together a lovely assortment and call it a picnic i.e.
-    <ul>
-      <li>PB&J sandwiches cut into cute triangles</li>
-      <li>A salad kit</li>
-      <li>Fruit (i.e. grapes, clementines, berries, dates)</li>
-      <li>Baby carrots and hummus</li>
-      <li>Roasted nuts (i.e. almonds or cashews)</li>
-      <li>Pastries, cookies, cake, or pie from a bakery</li>
-      <li>Chocolate</li>
-    </ul>
-    </p>
-    <p>
-      It's been a lot of fun hosting a monthly dinner. We've gotten to know people better and build deeper friendships.
-      Hosting dinner doesn't need
-      to be fussy or complicated. I hope this post helped clarify some of the process.
-    </p>
-  </div>
-
-
-</body>
-
+      <h3 id="locale">Locale</h3>
+      <p>
+        Scope out your living space. Where do you want guests to be? We close off the bedroom, which
+        leaves about 400 sq ft of space in the living room and kitchen. Our max capacity is 9 guests
+        before we think it's too loud and squished. Your tolerance may vary
+      </p>
+      <p>
+        If you have a small space, open up as much room as possible. It helps to remove items from
+        the floor and push big items towards the walls. That way, there's more open area for folks
+        to move and mingle.
+      </p>
+      <h3 id="food">Food</h3>
+      <p>
+        The food is the least important part. I've noticed that folks who don't cook are often
+        self-conscious at dinner parties, but there's no reason to be. I'm chuffed if people bring
+        no-cook items like wine, fruit, chocolate, chips/guacamole. Food can be simple. It's most
+        important that it's palatable and plentiful.
+      </p>
+      <p>
+        I'd recommend preparing something well within your cooking skill-level. I find it stressful
+        to try a new, elaborate recipe under time pressure when I'm expecting guests. If you do try
+        something and it goes awry, then that's okay too. If worst comes to worst, you'll have a
+        funny story to tell and you can all get takeout or eat lots of snacks.
+      </p>
+      <p>
+        Even if you don't cook, you can put together a lovely assortment and call it a picnic i.e.
+      </p>
+      <ul>
+        <li>PB&J sandwiches cut into cute triangles</li>
+        <li>A salad kit</li>
+        <li>Fruit (i.e. grapes, clementines, berries, dates)</li>
+        <li>Baby carrots and hummus</li>
+        <li>Roasted nuts (i.e. almonds or cashews)</li>
+        <li>Pastries, cookies, cake, or pie from a bakery</li>
+        <li>Chocolate</li>
+      </ul>
+      <p>
+        It's been a lot of fun hosting a monthly dinner. We've gotten to know people better and
+        build deeper friendships. Hosting dinner doesn't need to be fussy or complicated. I hope
+        this post helped clarify some of the process.
+      </p>
+    </div>
+  </body>
 </html>

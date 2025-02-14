@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Elaine Lin Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Elaine Lin" />
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
-<head>
-  <title>Elaine Lin Portfolio</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".navigation").load("/base/nav.html");
+      });
+    </script>
+  </head>
 
-  <script>
-    $(document).ready(function () {
-      $(".navigation").load("/base/nav.html");
-    });
-  </script>
-</head>
+  <body>
+    <div id="header">
+      <nav class="navigation"></nav>
+    </div>
 
-<body>
-  <div id="header">
-    <nav class="navigation"></nav>
-  </div>
-
-  <div class="container">
-    <h2>How to plan a wedding</h2>
-    <p>
-      <img src="/assets/wedding/wedding-altar.jpg" alt="A couple at the wedding altar." class="center"
-        width="500" />
-    </p>
-    <p>
-      C and I started planning our wedding Oct 8, 2022 and got married Sep 9, 2023. We had a 40-person outdoor wedding in Springfield, Ohio. Planning a wedding is a lot of work! This piece describes how we planned ours, and I hope you'll find it helpful. I broke down the process into:
-    </p>
-    <ol>
-      <li><a href="#initial-planning">Initial planning</a></li>
-      <li><a href="#venue">Book a venue</a></li>
-      <li><a href="#vendors-guests">Figure out vendors and guests</a></li>
-      <li><a href="#aesthetics">Decide aesthetic details</a></li>
-      <li><a href="#ceremony">Decide ceremony details</a></li>
-      <li><a href="#pre-post-gatherings">Plan pre/post wedding gatherings</a></li>
-      <li><a href="#day-of-logistics">Plan day-of logistics</a></li>
-      <li><a href="#appendix">Appendix</a></li>
-    </ol>
-    <p>
-      The biggest takeaways from the process are:
+    <div class="container">
+      <h2>How to plan a wedding</h2>
+      <p>
+        <img
+          src="/assets/wedding/wedding-altar.jpg"
+          alt="A couple at the wedding altar."
+          class="center"
+          width="500"
+        />
+      </p>
+      <p>
+        C and I started planning our wedding Oct 8, 2022 and got married Sep 9, 2023. We had a
+        40-person outdoor wedding in Springfield, Ohio. Planning a wedding is a lot of work! This
+        piece describes how we planned ours, and I hope you'll find it helpful. I broke down the
+        process into:
+      </p>
+      <ol>
+        <li><a href="#initial-planning">Initial planning</a></li>
+        <li><a href="#venue">Book a venue</a></li>
+        <li><a href="#vendors-guests">Figure out vendors and guests</a></li>
+        <li><a href="#aesthetics">Decide aesthetic details</a></li>
+        <li><a href="#ceremony">Decide ceremony details</a></li>
+        <li><a href="#pre-post-gatherings">Plan pre/post wedding gatherings</a></li>
+        <li><a href="#day-of-logistics">Plan day-of logistics</a></li>
+        <li><a href="#appendix">Appendix</a></li>
+      </ol>
+      <p>
+        The biggest takeaways from the process are:
+      </p>
       <ul>
-        <li><b>Expect lots of logistics and arbitrary decisions.</b> Planning a wedding is a lot like planning a team offsite. You get to figure out where to go, what to do, and what to eat. We cared most about getting our family together to celebrate and decided on the little details quickly.</li>
-        <li><b>Expect something to go wrong.</b> There are lots of logistics, people, and things to track, so snafus are bound to happen. For example, we had dance floor issues and called the party rental place for adjustments the day/morning before the wedding. Forgetting things is also normal - C forgot his suit vest, and I forgot bobby pins.</li>
+        <li>
+          <b>Expect lots of logistics and arbitrary decisions.</b> Planning a wedding is a lot like
+          planning a team offsite. You get to figure out where to go, what to do, and what to eat.
+          We cared most about getting our family together to celebrate and decided on the little
+          details quickly.
+        </li>
+        <li>
+          <b>Expect something to go wrong.</b> There are lots of logistics, people, and things to
+          track, so snafus are bound to happen. For example, we had dance floor issues and called
+          the party rental place for adjustments the day/morning before the wedding. Forgetting
+          things is also normal - C forgot his suit vest, and I forgot bobby pins.
+        </li>
       </ul>
-    </p>
-    <h3 id="initial-planning">Initial planning</h3>
-    <p><b>To start, do you want a wedding at all?</b> We wanted a wedding to commemorate the marriage and celebrate with our family and friends. </p>
-    <p><b>Create some basic guidelines for what you want.</b> Sketching out this outline helped us figure out wedding priorities and make decisions. For example, here's what our initial wedding doc looked
-      like in October 2022. For locations, we considered getting married in Ohio, where my parents live, or around San Francisco, where
-      we live. </p>
-    <pre>
+      <h3 id="initial-planning">Initial planning</h3>
+      <p>
+        <b>To start, do you want a wedding at all?</b> We wanted a wedding to commemorate the
+        marriage and celebrate with our family and friends.
+      </p>
+      <p>
+        <b>Create some basic guidelines for what you want.</b> Sketching out this outline helped us
+        figure out wedding priorities and make decisions. For example, here's what our initial
+        wedding doc looked like in October 2022. For locations, we considered getting married in
+        Ohio, where my parents live, or around San Francisco, where we live.
+      </p>
+      <pre>
   Guest target: 50-100
   Time: 2023 (June - September)
   
@@ -77,168 +100,407 @@
   
   Menu
   - Vegan!
-    </pre>
-    <h3 id="venue">Book a venue</h3>
-    <p>The first time we booked was the venue. This helps constrain and guide all of the other decisions. We explicitly searched for wedding venues, but note that there are other location options. For example, you could get married in a backyard, at a park, or in a general party space. </p>
-    <p><b>Decide on a location, time frame, and venue.</b> Start with high-level details. We made a spreadsheet to track venue details like:
-    <ol>
-      <li>Name of the venue</li>
-      <li>Link to the venue website</li>
-      <li>Total capacity of the venue</li>
-      <li>Distance from home. We looked for venues within an hour's drive.</li>
-      <li>Whether we contacted them</li>
-      <li>Additional notes</li>
-    </ol>
-    </p>
-    <p>We then filtered the list based on a few factors:
-    <ol>
-      <li><b>Cost:</b> C looked into a San Francisco wedding. The
-        cheaper venues cost at least $5k for a Saturday. Other costs were also higher, and it looked like the total
-        would be much more than $10k. Due to cost factors, we decided to get married in Ohio.</li>
-      <li><b>Aesthetics/preferences:</b> We wanted rustic elegance for the overall aesthetic. We looked at both indoor/outdoor locations. Of the initial list, we crossed a few off because:
-        <ul>
-          <li>C did not want to get married in a barn.</li>
-          <li>One venue was a meat farm, and that didn’t fit with the vegan theme.</li>
-          <li>One arboretum looked nice, but was not closed to the public. We wanted our wedding to be more private.</li>
-        </ul>
-      <li><b>Availability:</b> We looked for a 9/9/23 or 9/16/23 wedding date, and some venues weren't available.
-      </li>
-      <li><b>Communication/responsiveness:</b> Some venues did not respond promptly to our messages. We took this as a bad sign and
-        crossed them off the list.</li>
-    </ol>
-    </p>
-    <p><b>Filter the short list of venues.</b> Once you have a short list of venues, you can look into details and narrow things down further. We created a list of venue questions based on some reference articles (see <a href="https://www.theknot.com/content/wedding-venue-site-tour-questions-to-ask" target="_blank">link</a> and <a href="https://www.herecomestheguide.com/wedding-ideas/questions-to-ask-your-wedding-venue" target="_blank">link</a>) and created a list:</p>
-    <ul>
-      <li>Is the space accessible?</li>
-      <li>What space is there for the ceremony, reception, and dancing?</li>
-      <li>Is there parking?</li>
-      <li>What are the vendor options?</li>
-      <li>Are there noise restraints?</li>
-      <li>Can they handle tailored requests?</li>
-      <li>What’s the rental fee? What’s included in the cost? Are there any other fees?</li>
-      <li>How many hours do we have the venue?</li>
-      <li>Are there changing areas?</li>
-      <li>What services are included?</li>
-      <li>Does the venue provide setup / breakdown?</li>
-      <li>How many weddings do they have in a day?</li>
-      <li>What equipment is provided i.e. tables, chairs, decorations?</li>
-      <li>Can we bring our own alcohol?</li>
-      <li>Where are the restrooms?</li>
-    </ul>
-    </p>
-    <p>If possible, visit the venues in person. In October 2022, C flew out to Ohio, drove about, and visited 4 venues in a day. For each venue, he asked questions, took photos, and wrote down notes.
-    <p>Asking questions and visiting give you more information for decision-making. Some places look nice, but don't have a nice surrounding area. Some places have additional fees or require you use their catering, which can increase costs. Some people are late when you visit, which we took as a bad sign.</p>
-    <p>At the end of this process, we booked the <a href="https://www.partingtonspringhouse.com/about.html" target="_blank">Partington Spring House</a> for a 9/9/23 wedding. We picked it since it was the most beautiful location by far. As a con, we noted that it was all outdoors and would require more logistic work.</p>
-    <p class="center">
-      <img src="/assets/wedding/wedding-walk.jpg" alt="A wedding couple walking through a field."
-        width="400" />
-      <p class="center">Green is soothing on the eye.</p>
-    </p>
-    <h3 id="vendors-guests">Figure out vendors and guests</h3>
-    <p>Next, we figured out other vendors and guests. That way, we could make sure vendors were available on the wedding day. For guests, attending a wedding is a time investment, so we wanted to give as much advance notice as we could.</p>
-    <p>
-      <b>Book other vendors.</b> The vendor list will vary. For example, instead of a florist, we bought artificial flowers to cut down on cost and waste. Your venue may also provide some additional support, such as a day-of coordinator. If you'd like more logistic help, you may want a wedding planner. We booked several vendors:
+    </pre
+      >
+      <h3 id="venue">Book a venue</h3>
+      <p>
+        The first time we booked was the venue. This helps constrain and guide all of the other
+        decisions. We explicitly searched for wedding venues, but note that there are other location
+        options. For example, you could get married in a backyard, at a park, or in a general party
+        space.
+      </p>
+      <p>
+        <b>Decide on a location, time frame, and venue.</b> Start with high-level details. We made a
+        spreadsheet to track venue details like:
+      </p>
+
+      <ol>
+        <li>Name of the venue</li>
+        <li>Link to the venue website</li>
+        <li>Total capacity of the venue</li>
+        <li>Distance from home. We looked for venues within an hour's drive.</li>
+        <li>Whether we contacted them</li>
+        <li>Additional notes</li>
+      </ol>
+      <p>We then filtered the list based on a few factors:</p>
+      <ol>
+        <li>
+          <b>Cost:</b> C looked into a San Francisco wedding. The cheaper venues cost at least $5k
+          for a Saturday. Other costs were also higher, and it looked like the total would be much
+          more than $10k. Due to cost factors, we decided to get married in Ohio.
+        </li>
+        <li>
+          <b>Aesthetics/preferences:</b> We wanted rustic elegance for the overall aesthetic. We
+          looked at both indoor/outdoor locations. Of the initial list, we crossed a few off
+          because:
+          <ul>
+            <li>C did not want to get married in a barn.</li>
+            <li>One venue was a meat farm, and that didn’t fit with the vegan theme.</li>
+            <li>
+              One arboretum looked nice, but was not closed to the public. We wanted our wedding to
+              be more private.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <b>Availability:</b> We looked for a 9/9/23 or 9/16/23 wedding date, and some venues
+          weren't available.
+        </li>
+        <li>
+          <b>Communication/responsiveness:</b> Some venues did not respond promptly to our messages.
+          We took this as a bad sign and crossed them off the list.
+        </li>
+      </ol>
+      <p>
+        <b>Filter the short list of venues.</b> Once you have a short list of venues, you can look
+        into details and narrow things down further. We created a list of venue questions based on
+        some reference articles (see
+        <a
+          href="https://www.theknot.com/content/wedding-venue-site-tour-questions-to-ask"
+          target="_blank"
+          >link</a
+        >
+        and
+        <a
+          href="https://www.herecomestheguide.com/wedding-ideas/questions-to-ask-your-wedding-venue"
+          target="_blank"
+          >link</a
+        >) and created a list:
+      </p>
       <ul>
-        <li>DJ for sound support during the ceremony and music for dancing. During the ceremony, our officiant had a clip-on mic so he could be easily heard.</li>
-        <li>Photographer to take photos during the event. That way, we could look back on photos to remember the day.</li>
+        <li>Is the space accessible?</li>
+        <li>What space is there for the ceremony, reception, and dancing?</li>
+        <li>Is there parking?</li>
+        <li>What are the vendor options?</li>
+        <li>Are there noise restraints?</li>
+        <li>Can they handle tailored requests?</li>
+        <li>What’s the rental fee? What’s included in the cost? Are there any other fees?</li>
+        <li>How many hours do we have the venue?</li>
+        <li>Are there changing areas?</li>
+        <li>What services are included?</li>
+        <li>Does the venue provide setup / breakdown?</li>
+        <li>How many weddings do they have in a day?</li>
+        <li>What equipment is provided i.e. tables, chairs, decorations?</li>
+        <li>Can we bring our own alcohol?</li>
+        <li>Where are the restrooms?</li>
+      </ul>
+      <p>
+        If possible, visit the venues in person. In October 2022, C flew out to Ohio, drove about,
+        and visited 4 venues in a day. For each venue, he asked questions, took photos, and wrote
+        down notes.
+      </p>
+      <p>
+        Asking questions and visiting give you more information for decision-making. Some places
+        look nice, but don't have a nice surrounding area. Some places have additional fees or
+        require you use their catering, which can increase costs. Some people are late when you
+        visit, which we took as a bad sign.
+      </p>
+      <p>
+        At the end of this process, we booked the
+        <a href="https://www.partingtonspringhouse.com/about.html" target="_blank"
+          >Partington Spring House</a
+        >
+        for a 9/9/23 wedding. We picked it since it was the most beautiful location by far. As a
+        con, we noted that it was all outdoors and would require more logistic work.
+      </p>
+      <p class="center">
+        <img
+          src="/assets/wedding/wedding-walk.jpg"
+          alt="A wedding couple walking through a field."
+          width="400"
+        />
+        <span class="center">Green is soothing on the eye.</span>
+      </p>
+      <h3 id="vendors-guests">Figure out vendors and guests</h3>
+      <p>
+        Next, we figured out other vendors and guests. That way, we could make sure vendors were
+        available on the wedding day. For guests, attending a wedding is a time investment, so we
+        wanted to give as much advance notice as we could.
+      </p>
+      <p>
+        <b>Book other vendors.</b> The vendor list will vary. For example, instead of a florist, we
+        bought artificial flowers to cut down on cost and waste. Your venue may also provide some
+        additional support, such as a day-of coordinator. If you'd like more logistic help, you may
+        want a wedding planner. We booked several vendors:
+      </p>
+
+      <ul>
+        <li>
+          DJ for sound support during the ceremony and music for dancing. During the ceremony, our
+          officiant had a clip-on mic so he could be easily heard.
+        </li>
+        <li>
+          Photographer to take photos during the event. That way, we could look back on photos to
+          remember the day.
+        </li>
         <li>Caterer to feed our guests reception snacks and dinner.</li>
         <li>Vegan bakery for our wedding cake.</li>
-        <li>Day-of coordinator to decorate and handle things that come up. For example, she set up the arch flowers and table decor.</li>
-        <li>Party rental place for a tent and dance floor. We had an outdoor wedding, so the tent provided shade from the sun, and the dance floor provided a harder surface for dancing.</li>
+        <li>
+          Day-of coordinator to decorate and handle things that come up. For example, she set up the
+          arch flowers and table decor.
+        </li>
+        <li>
+          Party rental place for a tent and dance floor. We had an outdoor wedding, so the tent
+          provided shade from the sun, and the dance floor provided a harder surface for dancing.
+        </li>
       </ul>
-    </p>
-    <p>For food, you may want to do a tasting. We didn't do a tasting for the caterer. We did sample some cupcake flavors, and that was a delight. </p>
-    <p class="center">
-      <img src="/assets/wedding/happy-chicks-cupcakes.jpg" class="center" width="400" alt="Cupcakes from Happy Chicks Bakery"/>
-      <p class="center">Assorted cupcakes from <a href="https://www.happychicksbakery.com/" target="_blank">Happy Chicks Bakery</a></p>
-    </p>
-    <p>
-      <b>Make a guest list.</b> We made a guest list of our family and friends. Note that not all invited guests will show up. Per a basic Google search: "75-85 percent of wedding guests usually attend. The breakdown: 85 percent of local guests, 55 percent of out-of-town guests, and 35 percent of destination wedding guests will show up." This was surprising to us, but lines up well with our experience.
-    </p>
-    <p>
-      <b>Create a wedding website.</b> This is helpful for logistics. We used <a target="_blank" href="https://www.zola.com/">Zola</a>. As the date approaches, guests will have questions on schedule, travel, registry, dress code, etc. A website makes it easy to answer questions. We also used the wedding website to manage the guest list details, such as save-the-dates, invites, and RSVPs. 
-    </p>
-    <p>
-      <b>Send out save-the-dates/invites. </b> You can do this digitally or via mail. You can also repurpose save-the-dates as official invitations. We sent out separate save-the-dates and invites via mail, and we picked <a href="https://www.zola.com/wedding-planning/invitations/a1a8cc12-a716-495e-8868-92f96bbeafa7" target="_blank">the Maywood design on Zola</a> since it is simple and easy-to-read.
-    </p>
-    <p>If you are sending things via mail, I'd recommend ordering a proof, a sample card, to your address first. The card can look different on your computer than in person. This is a good way of validating that everything looks right before you order a big batch.</p>
-    <h3 id="aesthetics">Decide aesthetic details</h3>
-    <p>
-      <b>Start by picking a color scheme.</b> This is an easy way to make things look cohesive. A color scheme helps you figure out decorations and coordinate family photos. For our colors, we picked wine red, rose gold, charcoal gray, and navy blue. Here's how we picked the colors:
+      <p>
+        For food, you may want to do a tasting. We didn't do a tasting for the caterer. We did
+        sample some cupcake flavors, and that was a delight.
+      </p>
+      <p class="center">
+        <img
+          src="/assets/wedding/happy-chicks-cupcakes.jpg"
+          class="center"
+          width="400"
+          alt="Cupcakes from Happy Chicks Bakery"
+        />
+        <span class="center"
+          >Assorted cupcakes from
+          <a href="https://www.happychicksbakery.com/" target="_blank">Happy Chicks Bakery</a></span
+        >
+      </p>
+      <p>
+        <b>Make a guest list.</b> We made a guest list of our family and friends. Note that not all
+        invited guests will show up. Per a basic Google search: "75-85 percent of wedding guests
+        usually attend. The breakdown: 85 percent of local guests, 55 percent of out-of-town guests,
+        and 35 percent of destination wedding guests will show up." This was surprising to us, but
+        lines up well with our experience.
+      </p>
+      <p>
+        <b>Create a wedding website.</b> This is helpful for logistics. We used
+        <a target="_blank" href="https://www.zola.com/">Zola</a>. As the date approaches, guests
+        will have questions on schedule, travel, registry, dress code, etc. A website makes it easy
+        to answer questions. We also used the wedding website to manage the guest list details, such
+        as save-the-dates, invites, and RSVPs.
+      </p>
+      <p>
+        <b>Send out save-the-dates/invites. </b> You can do this digitally or via mail. You can also
+        repurpose save-the-dates as official invitations. We sent out separate save-the-dates and
+        invites via mail, and we picked
+        <a
+          href="https://www.zola.com/wedding-planning/invitations/a1a8cc12-a716-495e-8868-92f96bbeafa7"
+          target="_blank"
+          >the Maywood design on Zola</a
+        >
+        since it is simple and easy-to-read.
+      </p>
+      <p>
+        If you are sending things via mail, I'd recommend ordering a proof, a sample card, to your
+        address first. The card can look different on your computer than in person. This is a good
+        way of validating that everything looks right before you order a big batch.
+      </p>
+      <h3 id="aesthetics">Decide aesthetic details</h3>
+      <p>
+        <b>Start by picking a color scheme.</b> This is an easy way to make things look cohesive. A
+        color scheme helps you figure out decorations and coordinate family photos. For our colors,
+        we picked wine red, rose gold, charcoal gray, and navy blue. Here's how we picked the
+        colors:
+      </p>
       <ul>
         <li>We prefer warm colors (i.e. reds and pinks) to cool ones (i.e. blues and greens).</li>
         <li>Wine red and rose gold are flattering on me, so I like those colors.</li>
-        <li>Charcoal gray and navy blue are common neutrals, so it makes it easy for folks to find suits.</li>
-      </ul> 
-    </p>
-    <p class="center">
-      <img src="/assets/wedding/wedding-color-palette.png"
-        alt="4 colored squares. The colors are wine red, rose gold, charcoal gray, and navy blue." width="400" />
-    </p>
-    <p><b>Figure out your wedding outfits.</b> C bought a suit and tie matching the color scheme. I did the following:
-      <ul>
-        <li><b>Dress:</b> Wedding dresses come in lots of styles and silhouettes. I picked a short-sleeve, ankle-length dress so it'd be easier to dance and move about.</li>
-        <li><b>Accessories:</b> I had a pearl necklace and pearl earrings, and I bought a pearl headband to match. I had some blush block heel sandals which match my skin tone and the color scheme.</li>
-        <li><b>Hair:</b> I have a pixie cut. I got a hair cut a week before so it'd look sharp.</li>
-        <li><b>Makeup:</b> I did my own makeup. I tried going to a salon, but didn't like the look. You can try booking a trial appointment to see if you like it.</li>
-        <li><b>Nails:</b> I got an impromptu gel manicure the day-of the wedding. In retrospect, I'd suggest testing this out beforehand to make sure you like the look and feel of things. The photos don't have too many paw close-ups, so this was perhaps inessential.</li>
+        <li>
+          Charcoal gray and navy blue are common neutrals, so it makes it easy for folks to find
+          suits.
+        </li>
       </ul>
-    </p>
-    <p><b>Buy rings. </b>You can use a ring sizer to measure your paws and make sure things fit.</p>
-    <p>
-      <b>Decide on a cake aesthetic.</b> Based on the color scheme, we decided what our cake would look like. Note that some colors are harder to pull off in cake form. For example, yellow/brown/green cakes can be harder to get right and may look dubious. We wanted a simple and elegant cake, so we provided the bakery with the following reference photo. They did a great job, and the actual cake turned out beautiful. We also got a lil 4-inch gluten free cake on the side.
-    <table>
-      <tr>
-        <th>Reference</th>
-        <th>Actual</th>
-      </tr>
-      <tr>
-        <td><img src="/assets/wedding/wedding-cake-reference.jpg" alt="A photo of a white wedding cake with red flowers"
-          height="450" /></td>
-        <td><img src="/assets/wedding/wedding-cake-actual.jpg" alt="A photo of a white wedding cake with red flowers"
-          height="450" /></td>
-      </tr>
-    </table>
-  </p>
-  <p><b>Figure out wedding decorations, flowers, and favors.</b> Wedding decorations and flowers help make the day feel special. For flowers, we got artificial ones from <a href="https://www.lingsmoment.com/pages/wedding-color-collections" target="_blank">Ling's Moment</a> to reduce cost and waste. They have coordinated color schemes and many types of flowers, so it was easy to pick decorations. The smaller flowers are in dusty rose & mauve; my bouquet and the arch are in burgundy & dusty rose. For wedding favors, we bought some 3-inch gift boxes and put a lil surprise in for our guests. 
-  <p>Here's how we set things up:</p>
-  <p>For the guest table, we put gift boxes, a small bouquet, a table number, and a candle.</p>
-  <p class="center"><img class="center" src="/assets/wedding/guest-table-decor.jpg" width="400" alt="Simple decoration for a guest table at a wedding. The table has a vase of flowers, a table number, a gift box, and a small candle." ><p class="center">Decorations for a guest table</p></p>
-  <p>For the head table, we put more flowers, a candle, and a couple picture.</p>
-  <p class="center"><img class="center" src="/assets/wedding/head-table-decor.jpg" width="400" alt="Simple decoration for a head table at a wedding. The table has flowers and a sign with grumpy chickens."><p class="center">Decorations for a head table</p></p>
-  <p>Partington Spring House provided the triangle arch, and we added the arch draping / flowers.</p>
-  <p class="center"><img class="center" src="/assets/wedding/psh-wedding-arch.jpg" width="400" alt="A wedding arch at Partington Spring House"><p class="center">Wedding arch</p></p>
-  <h3 id="ceremony">Decide ceremony details</h3>
-  <p>There are several details for the wedding ceremony itself:
-    <ul>
-      <li><b>Figure out the marriage license/certificate. </b>  The exact steps depend on where you're getting married. A marriage license gives you permission to be married. After it's filled out, you get a marriage certificate certifying that you're married.</li>
-      <li><b>Pick an officiant.</b> C's grandfather officiated our wedding. We deferred to him on the ceremony style. Note that your officiant may need to fill out paperwork depending on where you're getting married. </li>
-      <li><b>Write vows.</b> We went with the basic wedding vows with some small tweaks.</li>
-      <li><b>Figure out a procession.</b> Who is walking? What is the walking order? We did not have bridesmaids or groomsmen. Our procession was simple: Gramps (the officiant), C, C's parents, our baby nephew ringbearer + his parents, my parents, E. Personally, I'm not fond of the idea of a bride's father "giving her away", and the aisle was too narrow for both of my parents, so I scampered down by myself.
-      </li>
-      <li><b>Pick procession music.</b> You can have different music for different points in the procession. We had one song, <a href="https://open.spotify.com/track/7wEql4SrP9nL5U4zxmcrVM?si=9e9dd1f13bff4223" target="_blank">Sheep May Safely Graze</a>.</li>
-    </ul>
-  </p>
-  <p class="center">
-    <img src="/assets/wedding/e-wedding-procession.jpg"
-      alt="A bride walking down an aisle" width="400" />
-    <p class="center">hello, it me</p>
-  </p>
-  <h3 id="pre-post-gatherings">Plan pre/post wedding gatherings</h3>
-  <p>Many folks travel long distances to attend a wedding. Pre/post wedding gatherings are a good way to spend more time with folks if they're around.</p>
-  <p>The pre-wedding gathering is often a rehearsal dinner. Depending on your wedding, you may find it helpful to do a dry-run of logistics. In our case, on Friday before the wedding, we had an informal family gathering at my parents' house and ordered catering.</p>
-  <p>For the post-wedding gathering on Sunday, we booked a spot in a nearby park, invited everybody who was around, and ordered Indian food. Note that after the wedding, folks may fly out, so it's good to do this earlier in the day.</p>
-  <h3 id="day-of-logistics">Plan day-of logistics</h3>
-  <p><b>Draft a seating chart after you have RSVPs. </b> A seating chart is helpful so guests know where to go. If you're attending a wedding, there are lots of unknown faces, so it's helpful for the couple to provide some structure here.</p>
-  <p>To start, figure out the number and size of tables at the venue. This constrains how you will group people together. For instance, your venue could have long rectangular tables or small circular ones.</p>
-  <p>Note that your seating chart may change if things come up, or some folks can't make it. We also ended up making last-minute changes to the seating chart after visiting the venue and seeing the table setup.</p>
-  <p class="center">
-    <img src="/assets/wedding/wedding-table-setup.png"
-      alt="A chart showing a wedding table setup" width="400" />
-    <p class="center">C made a chart to communicate the table setup</p>
-  </p>
-  <p><b>Make a schedule of events for the wedding weekend. </b> We got married Saturday, 9/9, and we wrote down the schedule for the weekend. The schedule also included vendor details and contact information, the seating chart, decoration instructions, etc. For example, here's what our schedule looked like:
-<pre>
+      <p class="center">
+        <img
+          src="/assets/wedding/wedding-color-palette.png"
+          alt="4 colored squares. The colors are wine red, rose gold, charcoal gray, and navy blue."
+          width="400"
+        />
+      </p>
+      <p>
+        <b>Figure out your wedding outfits.</b> C bought a suit and tie matching the color scheme. I
+        did the following:
+      </p>
+      <ul>
+        <li>
+          <b>Dress:</b> Wedding dresses come in lots of styles and silhouettes. I picked a
+          short-sleeve, ankle-length dress so it'd be easier to dance and move about.
+        </li>
+        <li>
+          <b>Accessories:</b> I had a pearl necklace and pearl earrings, and I bought a pearl
+          headband to match. I had some blush block heel sandals which match my skin tone and the
+          color scheme.
+        </li>
+        <li><b>Hair:</b> I have a pixie cut. I got a hair cut a week before so it'd look sharp.</li>
+        <li>
+          <b>Makeup:</b> I did my own makeup. I tried going to a salon, but didn't like the look.
+          You can try booking a trial appointment to see if you like it.
+        </li>
+        <li>
+          <b>Nails:</b> I got an impromptu gel manicure the day-of the wedding. In retrospect, I'd
+          suggest testing this out beforehand to make sure you like the look and feel of things. The
+          photos don't have too many paw close-ups, so this was perhaps inessential.
+        </li>
+      </ul>
+      <p>
+        <b>Buy rings. </b>You can use a ring sizer to measure your paws and make sure things fit.
+      </p>
+      <p>
+        <b>Decide on a cake aesthetic.</b> Based on the color scheme, we decided what our cake would
+        look like. Note that some colors are harder to pull off in cake form. For example,
+        yellow/brown/green cakes can be harder to get right and may look dubious. We wanted a simple
+        and elegant cake, so we provided the bakery with the following reference photo. They did a
+        great job, and the actual cake turned out beautiful. We also got a lil 4-inch gluten free
+        cake on the side.
+      </p>
+      <table>
+        <tr>
+          <th>Reference</th>
+          <th>Actual</th>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="/assets/wedding/wedding-cake-reference.jpg"
+              alt="A photo of a white wedding cake with red flowers"
+              height="450"
+            />
+          </td>
+          <td>
+            <img
+              src="/assets/wedding/wedding-cake-actual.jpg"
+              alt="A photo of a white wedding cake with red flowers"
+              height="450"
+            />
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <b>Figure out wedding decorations, flowers, and favors.</b> Wedding decorations and flowers
+        help make the day feel special. For flowers, we got artificial ones from
+        <a href="https://www.lingsmoment.com/pages/wedding-color-collections" target="_blank"
+          >Ling's Moment</a
+        >
+        to reduce cost and waste. They have coordinated color schemes and many types of flowers, so
+        it was easy to pick decorations. The smaller flowers are in dusty rose & mauve; my bouquet
+        and the arch are in burgundy & dusty rose. For wedding favors, we bought some 3-inch gift
+        boxes and put a lil surprise in for our guests.
+      </p>
+      <p>Here's how we set things up:</p>
+      <p>For the guest table, we put gift boxes, a small bouquet, a table number, and a candle.</p>
+      <p class="center">
+        <img
+          class="center"
+          src="/assets/wedding/guest-table-decor.jpg"
+          width="400"
+          alt="Simple decoration for a guest table at a wedding. The table has a vase of flowers, a table number, a gift box, and a small candle."
+        />
+        <p class="center">Decorations for a guest table</p>
+      </p>
+      <p>For the head table, we put more flowers, a candle, and a couple picture.</p>
+      <p class="center">
+        <img
+          class="center"
+          src="/assets/wedding/head-table-decor.jpg"
+          width="400"
+          alt="Simple decoration for a head table at a wedding. The table has flowers and a sign with grumpy chickens."
+        />
+        <p class="center">Decorations for a head table</p>
+      </p>
+      <p>
+        Partington Spring House provided the triangle arch, and we added the arch draping / flowers.
+      </p>
+      <p class="center">
+        <img
+          class="center"
+          src="/assets/wedding/psh-wedding-arch.jpg"
+          width="400"
+          alt="A wedding arch at Partington Spring House"
+        />
+        <p class="center">Wedding arch</p>
+      </p>
+      <h3 id="ceremony">Decide ceremony details</h3>
+      <p>There are several details for the wedding ceremony itself:</p>
+      <ul>
+        <li>
+          <b>Figure out the marriage license/certificate. </b> The exact steps depend on where
+          you're getting married. A marriage license gives you permission to be married. After it's
+          filled out, you get a marriage certificate certifying that you're married.
+        </li>
+        <li>
+          <b>Pick an officiant.</b> C's grandfather officiated our wedding. We deferred to him on
+          the ceremony style. Note that your officiant may need to fill out paperwork depending on
+          where you're getting married.
+        </li>
+        <li><b>Write vows.</b> We went with the basic wedding vows with some small tweaks.</li>
+        <li>
+          <b>Figure out a procession.</b> Who is walking? What is the walking order? We did not have
+          bridesmaids or groomsmen. Our procession was simple: Gramps (the officiant), C, C's
+          parents, our baby nephew ringbearer + his parents, my parents, E. Personally, I'm not fond
+          of the idea of a bride's father "giving her away", and the aisle was too narrow for both
+          of my parents, so I scampered down by myself.
+        </li>
+        <li>
+          <b>Pick procession music.</b> You can have different music for different points in the
+          procession. We had one song,
+          <a
+            href="https://open.spotify.com/track/7wEql4SrP9nL5U4zxmcrVM?si=9e9dd1f13bff4223"
+            target="_blank"
+            >Sheep May Safely Graze</a
+          >.
+        </li>
+      </ul>
+      <p class="center">
+        <img
+          src="/assets/wedding/e-wedding-procession.jpg"
+          alt="A bride walking down an aisle"
+          width="400"
+        />
+        <span class="center">hello, it me</span>
+      </p>
+      <h3 id="pre-post-gatherings">Plan pre/post wedding gatherings</h3>
+      <p>
+        Many folks travel long distances to attend a wedding. Pre/post wedding gatherings are a good
+        way to spend more time with folks if they're around.
+      </p>
+      <p>
+        The pre-wedding gathering is often a rehearsal dinner. Depending on your wedding, you may
+        find it helpful to do a dry-run of logistics. In our case, on Friday before the wedding, we
+        had an informal family gathering at my parents' house and ordered catering.
+      </p>
+      <p>
+        For the post-wedding gathering on Sunday, we booked a spot in a nearby park, invited
+        everybody who was around, and ordered Indian food. Note that after the wedding, folks may
+        fly out, so it's good to do this earlier in the day.
+      </p>
+      <h3 id="day-of-logistics">Plan day-of logistics</h3>
+      <p>
+        <b>Draft a seating chart after you have RSVPs. </b> A seating chart is helpful so guests
+        know where to go. If you're attending a wedding, there are lots of unknown faces, so it's
+        helpful for the couple to provide some structure here.
+      </p>
+      <p>
+        To start, figure out the number and size of tables at the venue. This constrains how you
+        will group people together. For instance, your venue could have long rectangular tables or
+        small circular ones.
+      </p>
+      <p>
+        Note that your seating chart may change if things come up, or some folks can't make it. We
+        also ended up making last-minute changes to the seating chart after visiting the venue and
+        seeing the table setup.
+      </p>
+      <p class="center">
+        <img
+          src="/assets/wedding/wedding-table-setup.png"
+          alt="A chart showing a wedding table setup"
+          width="400"
+        />
+        <span class="center">C made a chart to communicate the table setup</span>
+      </p>
+      <p>
+        <b>Make a schedule of events for the wedding weekend. </b> We got married Saturday, 9/9, and
+        we wrote down the schedule for the weekend. The schedule also included vendor details and
+        contact information, the seating chart, decoration instructions, etc. For example, here's
+        what our schedule looked like:
+      </p>
+      <pre>
 Fri 9/8
 - Buy drinks for Friday and Saturday (Pops)
 - Package wedding favors (E)
@@ -301,38 +563,70 @@ Morning
 - Post-wedding gathering
   - Pick up food (E's parents)
   - Bring drinks (Pops)
-</pre>
-<p>
-  We had a lot of help, and we're so thankful for everybody who was involved. Some takeaways here are:
-  <ul>
-    <li><b>Delegate tasks, and accept help when possible.</b> Our families helped out a lot, and we couldn't have done it without them. For instance, we delegated picking up a cake/food/drinks and had a lot of help with assembling wedding favors, setting up, and decorating.</li>
-    <li><b>Check out the wedding venue sooner and with more folks.</b> We had an outdoor wedding, and some parts of the setup were more DIY. We flew in to Ohio on Thursday night, so we visited the wedding venue on Friday. There was a good amount to do on Friday: rearranging tables, validating the setup, and checking the ceremony area. In retrospect, it would have been nice to do this a day or two earlier and bring family along so they could help out.</li>
-  </ul>
-</p>    
-<p><b>Celebrate!</b> A wedding is such a special time, and it was so lovely to celebrate with all of our family and friends.</p>
-<p>
-  <img src="/assets/wedding/c-e-forehead-kiss.jpg" alt="A groom giving a bride a forehead kiss." class="center"
-    width="500" />
-</p>    
-    <h3 id="appendix">Appendix</h3>
-    <b><p>Helpful tools</p></b>
-    <p>
-      C and I are like a startup. We have many docs, robust task management, and regular check-ins. For the wedding, we found it helpful to use:
+</pre
+      >
+      <p>
+        We had a lot of help, and we're so thankful for everybody who was involved. Some takeaways
+        here are:
+      </p>
       <ul>
-        <li><a href="https://docs.google.com" target="_blank">Google Docs</a> for writing schedules and general planning</li>
-        <li><a href="https://sheets.google.com" target="_blank">Google Sheets</a> for comparing venues and tracking budget</li>
-        <li><a href="https://todoist.com" target="_blank">Todoist</a> for task assignment/management</li>
+        <li>
+          <b>Delegate tasks, and accept help when possible.</b> Our families helped out a lot, and
+          we couldn't have done it without them. For instance, we delegated picking up a
+          cake/food/drinks and had a lot of help with assembling wedding favors, setting up, and
+          decorating.
+        </li>
+        <li>
+          <b>Check out the wedding venue sooner and with more folks.</b> We had an outdoor wedding,
+          and some parts of the setup were more DIY. We flew in to Ohio on Thursday night, so we
+          visited the wedding venue on Friday. There was a good amount to do on Friday: rearranging
+          tables, validating the setup, and checking the ceremony area. In retrospect, it would have
+          been nice to do this a day or two earlier and bring family along so they could help out.
+        </li>
+      </ul>
+      <p>
+        <b>Celebrate!</b> A wedding is such a special time, and it was so lovely to celebrate with
+        all of our family and friends.
+      </p>
+      <p>
+        <img
+          src="/assets/wedding/c-e-forehead-kiss.jpg"
+          alt="A groom giving a bride a forehead kiss."
+          class="center"
+          width="500"
+        />
+      </p>
+      <h3 id="appendix">Appendix</h3>
+      <b><p>Helpful tools</p></b>
+      <p>
+        C and I are like a startup. We have many docs, robust task management, and regular
+        check-ins. For the wedding, we found it helpful to use:
+      </p>
+      <ul>
+        <li>
+          <a href="https://docs.google.com" target="_blank">Google Docs</a> for writing schedules
+          and general planning
+        </li>
+        <li>
+          <a href="https://sheets.google.com" target="_blank">Google Sheets</a> for comparing venues
+          and tracking budget
+        </li>
+        <li>
+          <a href="https://todoist.com" target="_blank">Todoist</a> for task assignment/management
+        </li>
         <li><a href="https://canva.com" target="_blank">Canva</a> for visual planning</li>
       </ul>
-    </p>
-    <b><p>Budget for the curious</p></b>
-    <p>
-      When other folks get married, I'm always curious how much it costs. In total, we spent ~$15k for a 40-person outdoor wedding in Springfield, Ohio. This includes Saturday wedding vendors, decorations, our wedding outfits/bands, and the Friday/Sunday gatherings.</p>
-    </p>
-    <p>
-      We also had a lot of help, so this is not the full cost. Instead of getting delivery, we had folks help pick up the cake, Friday dinner, and Sunday lunch. Family also bought things, like drinks and decorations.
-    </p>
-  </div>
-</body>
-
+      <b><p>Budget for the curious</p></b>
+      <p>
+        When other folks get married, I'm always curious how much it costs. In total, we spent ~$15k
+        for a 40-person outdoor wedding in Springfield, Ohio. This includes Saturday wedding
+        vendors, decorations, our wedding outfits/bands, and the Friday/Sunday gatherings.
+      </p>
+      <p>
+        We also had a lot of help, so this is not the full cost. Instead of getting delivery, we had
+        folks help pick up the cake, Friday dinner, and Sunday lunch. Family also bought things,
+        like drinks and decorations.
+      </p>
+    </div>
+  </body>
 </html>

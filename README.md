@@ -5,3 +5,5 @@ To develop locally, run:
 
 To deploy, `git push` changes to master. Changes are auto-deployed. 
 
+To format all HTML files, run:
+`prettier "**/*.html" --write --prose-wrap preserve`

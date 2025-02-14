@@ -1,220 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Elaine Lin Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Elaine Lin" />
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
-<head>
-  <title>Elaine Lin Portfolio</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".navigation").load("/base/nav.html");
+      });
+    </script>
+  </head>
 
-  <script>
-    $(document).ready(function () {
-      $(".navigation").load("/base/nav.html");
-    });
-  </script>
-</head>
+  <body>
+    <div id="header">
+      <nav class="navigation"></nav>
+    </div>
+    <div class="container" style="width:800px;margin-left: auto; margin-right: auto;">
+      <h2>
+        How to read more books
+      </h2>
+      <p>
+        To read more books, you can:
+      </p>
+      <ul>
+        <li><a href="#how-to-read">Decide how you like to read</a></li>
+        <li><a href="#find-books">Find books to read</a></li>
+        <li><a href="#make-time">Make time to read</a></li>
+      </ul>
+      <h3 id="how-to-read">
+        Decide how you like to read
+      </h3>
+      <p>
+        Do you prefer physical books, e-books, or audiobooks?
+      </p>
 
-<body>
-  <div id="header">
-    <nav class="navigation"></nav>
-  </div>
-  <div class="container" style="width:800px;margin-left: auto; margin-right: auto;">
-    <h2>
-      How to read more books
-    </h2>
-    <p>
-      To read more books, you can:
-    </p>
-    <ul>
-      <li><a href="#how-to-read">Decide how you like to read</a></li>
-      <li><a href="#find-books">Find books to read</a></li>
-      <li><a href="#make-time">Make time to read</a></li>
-    </ul>
-    <h3 id="how-to-read">
-      Decide how you like to read
-    </h3>
-    <p>
-      Do you prefer physical books, e-books, or audiobooks?
-    </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Medium</th>
+            <th>Pros/Cons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Physical books</td>
+            <td>
+              + Don't require charging<br />
+              - Heavy<br />
+              - Take up more space<br />
+            </td>
+          </tr>
+          <tr>
+            <td>E-books</td>
+            <td>
+              + Portable, fit in a purse<br />
+              - Not tactile, can't flip pages<br />
+            </td>
+          </tr>
+          <tr>
+            <td>Audiobooks</td>
+            <td>
+              + Can listen on walks, cars, and trains<br />
+              - Slower than reading on paper<br />
+              - Unusual at first <sup><a href="#footnote-1" id="inline-footnote-1">(1)</a></sup>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Medium</th>
-          <th>Pros/Cons</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Physical books</td>
-          <td>
-            + Don't require charging<br />
-            - Heavy<br />
-            - Take up more space<br />
-          </td>
-        </tr>
-        <tr>
-          <td>E-books</td>
-          <td>
-            + Portable, fit in a purse<br />
-            - Not tactile, can't flip pages<br />
-          </td>
-        </tr>
-        <tr>
-          <td>Audiobooks</td>
-          <td>
-            + Can listen on walks, cars, and trains<br />
-            - Slower than reading on paper<br />
-            - Unusual at first <sup><a href="#footnote-1" id="inline-footnote-1">(1)</a></sup>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <p>
+        I like e-books and audiobooks:
+      </p>
+      <ul>
+        <li>
+          For e-books, invest in a Kindle (or other e-reader) to read without distractions or eye
+          strain. Other devices have internet access, other apps, and glaring back lights. The
+          benefits of reading more books outweigh the upfront cost.
+        </li>
+        <li>For audiobooks, listen on 2x speed or more if you're impatient.</li>
+      </ul>
 
-    <p>
-      I like e-books and audiobooks:
-    </p>
-    <ul>
-      <li>
-        For e-books, invest in a Kindle (or other e-reader) to read without distractions or eye
-        strain. Other devices have internet access, other apps, and glaring back lights. The
-        benefits of reading more books outweigh the upfront cost.
-      </li>
-      <li>For audiobooks, listen on 2x speed or more if you're impatient.</li>
-    </ul>
+      <h3 id="find-books">Find books to read</h3>
 
-    <h3 id="find-books">Find books to read</h3>
+      <p>
+        For free books, get a library card. Then, use the following tools:
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="https://www.overdrive.com/apps/libby/" target="_blank">
+                Libby app
+              </a>
+            </td>
+            <td>
+              Borrow e-books and audiobooks<br />
+              Has a huge collection, 10/10 would recommend
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.hoopladigital.com/my/hoopla" target="_blank">
+                hoopla app
+              </a>
+            </td>
+            <td>
+              Borrow e-books and audiobooks<br />
+              Has some books that aren't in Libby
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.libraryextension.com/" target="_blank">
+                Library extension
+              </a>
+            </td>
+            <td>
+              See library availability as you browse other sites<br />
+              Shows books, e-books, and audiobooks
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        You can search for other free e-book sites, but most are sketchy with limited collections.
+      </p>
+      <p>
+        It's worth spending money on books:
+      </p>
+      <ul>
+        <li>Most books cost <$15, about as much as a restaurant meal or a movie ticket.</li>
+        <li>Try free e-book samples before buying. Don't buy or read books you don't like.</li>
+        <li>
+          I have an <a href="https://www.audible.com/" target="_blank">Audible</a> membership for
+          audiobooks and buy e-books adhoc.
+        </li>
+      </ul>
+      <h3 id="make-time">Make time to read</h3>
+      <p>
+        Keep reading material nearby. When you leave the house, bring a book with you.
+      </p>
+      <ul>
+        <li>For physical books, bring a large-enough bag.</li>
+        <li>For digital books, make sure devices are charged.</li>
+        <li>For audiobooks, bring headphones.</li>
+      </ul>
+      <p>
+        Read in spare moments. If you have an hour of commute time, then you have an hour of reading
+        time. <sup><a href="#footnote-2" id="inline-footnote-2">(2)</a></sup>
+      </p>
+      <ul>
+        <li>
+          Listen to an audiobook while driving or walking.
+        </li>
+        <li>
+          Read on trains and buses.
+        </li>
+        <li>
+          Bring a book to an appointment, and read in the waiting room or in line.
+        </li>
+      </ul>
+      <p>
+        Read in dedicated chunks of time. If you have time to browse social media, play video games,
+        or watch TV, then you have time to read. Reading feels more rewarding and relaxing, but has
+        a higher start-up cost.
+      </p>
+      <ul>
+        <li>
+          Read for just 5 minutes. After that initial focus time, it's easier to continue reading.
+        </li>
+        <li>Keep a book nearby, and move your phone and laptop to another room.</li>
+      </ul>
+      <h3>Conclusion</h3>
+      <p>
+        Why do you want to read? Some reasons are:
+      </p>
+      <ul>
+        <li>I read fiction as an escape.</li>
+        <li>I want to learn more about x.</li>
+        <li>I want concentrated knowlege not found in status updates or articles.</li>
+      </ul>
+      <p>
+        Love of learning motivated me to pick up reading again. I loved reading when I was a kid.
+        However, I didn't read for many years throughout high school and college. To get started, I
+        realized money spent on books is money well spent. I stopped being cheap and invested in an
+        e-reader and e-books. Having reading material nearby made it easier to read more books.
+      </p>
+      <p>
+        Over time, I found more ways to read. I learned that libraries have digital books, and I got
+        into audiobooks. This piece captures how I read more books. I hope you try different
+        suggestions to see what works for you.
+      </p>
 
-    <p>
-      For free books, get a library card. Then, use the following tools:
-    </p>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Tool</th>
-          <th>Purpose</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <a href="https://www.overdrive.com/apps/libby/" target="_blank">
-              Libby app
-            </a>
-          </td>
-          <td>
-            Borrow e-books and audiobooks<br />
-            Has a huge collection, 10/10 would recommend
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="https://www.hoopladigital.com/my/hoopla" target="_blank">
-              hoopla app
-            </a>
-          </td>
-          <td>
-            Borrow e-books and audiobooks<br />
-            Has some books that aren't in Libby
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="https://www.libraryextension.com/" target="_blank">
-              Library extension
-            </a>
-          </td>
-          <td>
-            See library availability as you browse other sites<br />
-            Shows books, e-books, and audiobooks
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      You can search for other free e-book sites, but most are sketchy with limited collections.
-    </p>
-    <p>
-      It's worth spending money on books:
-    </p>
-    <ul>
-      <li>Most books cost <$15, about as much as a restaurant meal or a movie ticket.</li>
-      <li>Try free e-book samples before buying. Don't buy or read books you don't like.
-      </li>
-      <li>I have an <a href="https://www.audible.com/" target="_blank">Audible</a> membership for audiobooks and buy
-        e-books adhoc.
-      </li>
-    </ul>
-    <h3 id="make-time">Make time to read</h3>
-    <p>
-      Keep reading material nearby. When you leave the house, bring a book with you.
-    </p>
-    <ul>
-      <li>For physical books, bring a large-enough bag.</li>
-      <li>For digital books, make sure devices are charged.</li>
-      <li>For audiobooks, bring headphones.</li>
-    </ul>
-    <p>
-      Read in spare moments. If you have an hour of commute time, then you have an hour of reading time. <sup><a
-          href="#footnote-2" id="inline-footnote-2">(2)</a></sup>
-    </p>
-    <ul>
-      <li>
-        Listen to an audiobook while driving or walking.
-      </li>
-      <li>
-        Read on trains and buses.
-      </li>
-      <li>
-        Bring a book to an appointment, and read in the waiting room or in line.
-      </li>
-    </ul>
-    <p>
-      Read in dedicated chunks of time. If you have time to browse social media, play video games, or watch TV, then you
-      have time to read. Reading feels more rewarding and relaxing, but has a higher start-up cost.
-    </p>
-    <ul>
-      <li>Read for just 5 minutes. After that initial focus time, it's easier to continue reading.</li>
-      <li>Keep a book nearby, and move your phone and laptop to another room.</li>
-    </ul>
-    <h3>Conclusion</h3>
-    <p>
-      Why do you want to read? Some reasons are:
-    </p>
-    <ul>
-      <li>I read fiction as an escape.</li>
-      <li>I want to learn more about x.</li>
-      <li> I want concentrated knowlege not found in status updates or articles.</li>
-    </ul>
-    <p>
-      Love of learning motivated me to pick up reading again. I loved reading when I was a kid. However, I didn't read
-      for many years throughout high school and college. To get started, I realized money spent on books is money well
-      spent. I stopped being cheap and invested in an e-reader and e-books. Having reading material nearby made it
-      easier to read more books.
-    </p>
-    <p>
-      Over time, I found more ways to read. I learned that libraries have digital books, and I got into audiobooks. This
-      piece captures how I read more books. I hope you try different suggestions to see what works for you.
-    </p>
-
-    <h3>Appendix</h3>
-    <p>Here's what the Library extension looks like:</p>
-    <img src="/assets/library-extension.png" width="800"
-      alt="A screenshot of the Goodreads website. There's an additional box that says 'Library Extension. San Francisco Public Library. 4 of 7 copies available.'" />
-    <h3>Footnotes</h3>
-    <p id="footnote-1">
-      <a href="#inline-footnote-1">(1)</a> I didn't like the first few audiobooks I tried. Sample a few genres to see
-      what you like. My favorite genre is nonfiction memoirs read by the author.
-    </p>
-    <p id="footnote-2">
-      <a href="#inline-footnote-2">(2)</a> Stay vigilant when reading in public. I avoid listening to anything when
-      walking through sketchy neighborhoods. Keep an eyeball on your surroundings on public transit.
-    </p>
-  </div>
-</body>
-
+      <h3>Appendix</h3>
+      <p>Here's what the Library extension looks like:</p>
+      <img
+        src="/assets/library-extension.png"
+        width="800"
+        alt="A screenshot of the Goodreads website. There's an additional box that says 'Library Extension. San Francisco Public Library. 4 of 7 copies available.'"
+      />
+      <h3>Footnotes</h3>
+      <p id="footnote-1">
+        <a href="#inline-footnote-1">(1)</a> I didn't like the first few audiobooks I tried. Sample
+        a few genres to see what you like. My favorite genre is nonfiction memoirs read by the
+        author.
+      </p>
+      <p id="footnote-2">
+        <a href="#inline-footnote-2">(2)</a> Stay vigilant when reading in public. I avoid listening
+        to anything when walking through sketchy neighborhoods. Keep an eyeball on your surroundings
+        on public transit.
+      </p>
+    </div>
+  </body>
 </html>
