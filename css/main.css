@@ -15,7 +15,7 @@
 }
 
 .navbar-logo>.navbar-link {
-  color: #212427;
+  color: #212529;
 }
 
 .navbar-logo-text {
@@ -99,4 +99,8 @@ a:hover {
 
 .paragraph-no-space {
   margin-bottom: 0px;
+}
+
+.footnote-black {
+  color: #212529;
 }
