@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elaine Lin Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Elaine Lin" />
+    <meta name="title" property="og:title" content="TODO" />
+    <meta name="description" property="og:description" content="TODO" />
+    <meta
+      property="og:image"
+      content="https://www.elainewlin.com/assets/hashbrowns/hashbrowns.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/highlight.min.css" />
+    <script src="/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $(".navigation").load("/base/nav.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <nav class="navigation"></nav>
+    </div>
+    <div class="container">
+      <h1 class="text-x-large">Simple non-cryptographic hash functions in Javascript</h1>
+      <p class="center">
+        <img
+          src="/assets/hashbrowns/hashbrowns.png"
+          width="300"
+          alt="4 hashbrowns on a plate, captioned with HASHBROWNS"
+        />
+        <span class="center">a pun</span>
+      </p>
+      <br />
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#mod">Example 1: modulo operator (%)</a></li>
+        <li><a href="#djb">Example 2: djbx33a</a></li>
+        <li><a href="#fnv">Example 3: fnv1a_32</a></li>
+        <li><a href="#credits">Credits & Footnotes</a></li>
+      </ul>
+
+      <h2 id="intro" class="text-large">Introduction</h2>
+      <p>
+        "Implement a hash table." is a classic programming interview question.<sup
+          ><a href="#footnote-1" id="inline-footnote-1" class="footnote-black">(1)</a></sup
+        >
+        A hash table is a common data structure. It goes by a few names - hash table, hashmap, a
+        Python dictionary.
+      </p>
+      <p>
+        To answer the question, you first need to clarify the requirements: What is the use-case for
+        the hash table? Understanding the use-case will help you decide whether to use a
+        cryptographic or a non-cryptographic hash function.
+      </p>
+      <p>
+        To understand cryptographic vs. non-cryptographic hash functions, consider the analogy of a
+        <a href="https://www.linkedin.com/pulse/one-way-two-way-door-john-tedesco/" target="_blank"
+          >"one-way vs. two-way door"</a
+        >
+        and the following pseudo-code.
+      </p>
+      <p class="center">
+        <img
+          src="/assets/hashbrowns/crypto-vs-non-crypto-hash.png"
+          width="600"
+          alt="A table with pseudo-code comparing cryptographic vs. non-cryptographic hash functions."
+        />
+      </p>
+      <p>
+        A cryptographic hash function is like a "one-way door". It should be irreversible. After
+        applying a cryptographic hash function, crypto_hash, to an input, you should not be able to
+        derive the original input from crypto_output.
+      </p>
+      <p>
+        A non-cryptographic hash function is more like a "two-way door". After applying a
+        non-cryptographic hash function, non_crypto_hash, to an input, you can still infer certain
+        properties about the input.
+      </p>
+      <p>
+        This post is about simple non-cryptographic hash functions in Javascript. Again,
+        <b>do not write your own hash functions for passwords or secure data.</b> I include toy
+        examples of Javascript non-cryptographic hash functions for learning purposes.
+      </p>
+      <h2 id="mod" class="text-large">Example 1: modulo operator (%)</h2>
+      <p>The simplest example of a non-cryptographic hash function is the modulo operator (%).</p>
+      <pre><code class="language-javascript">
+  const mod_hash = (num) => num % 5;
+  
+</code></pre>
+      <p>
+        Suppose you want to hash the numbers 1-100. To visualize this, imagine you have 100 red,
+        bouncy balls numbered 1 to 100. You want to sort them equally into 5 big, blue buckets
+        numbered 1 to 5.
+      </p>
+      <p class="center">
+        <img
+          src="/assets/hashbrowns/mod-hash-balls-buckets.png"
+          width="600"
+          alt="4 stacked hashbrowns on a plate, captioned with 'HASHBROWNS'."
+        />
+      </p>
+      <p>
+        One way to do this mathematically is to use the modulo operator (%). num % 5 is the
+        remainder when you divide num by 5. For example:
+      </p>
+
+      <ul>
+        <li>42 % 5 = 2 because 42 = 5 * 8 + 2.</li>
+        <li>30 % 5 = 0 because 30 = 5 * 6 + 0.</li>
+      </ul>
+      <p>
+        To test this, you can run the mod_hash Javascript code snippet in your browser: right-click
+        and click Inspect, or use the keyboard shortcut (option-command-I on Mac).
+      </p>
+      <p class="center">
+        <img src="/assets/hashbrowns/mod-hash-browser-inspect.png" width="600" alt="A screenshot of the browser console computing mod_hash for the numbers 1-10." />
+      </p>
+      <pre><code class="language-javascript">
+  // 💡 Learning check: Take a minute to compute
+  mod_hash(11);
+  mod_hash(24);
+  mod_hash(90);
+  // Do it in your head. You can double-check by running the code.
+
+</code></pre>
+      <h2 id="djb" class="text-large">Example 2: djbx33a</h2>
+      <p>
+        Another example of a simple, non-cryptographic hash function is djbx33a. The function is
+        named after Daniel J. Bernstein (DJB).
+      </p>
+      <pre><code class="language-javascript">
+  // Magic number.
+  const DJB_IV = 5381;
+
+  function djbx33a(str) {
+    let hash = DJB_IV;
+
+    for (let i = 0; i < str.length; i++) {
+      hash = ((hash << 5) + hash) + str.charCodeAt(i); // hash * 33 + c
+    }
+    return hash >>> 0;
+  }
+
+</code></pre>
+      <p>
+        To test this, you can run this code snippet in your browser: right-click and click Inspect,
+        or use the keyboard shortcut (option-command-I on Mac). Again,
+        <b>do not use this hash function for passwords or secure data.</b> You can test it with
+        names of fruits or vegetables.
+      </p>
+      <p>
+        The code snippet is basic Javascript, but 3 bits (pun intended) stand out. For more
+        information on bitwise operations, please see this article on
+        <a
+          href="https://medium.com/@rahul.raviprasad/the-little-known-bitwise-operations-and-their-performance-in-javascript-c281d512c757"
+          target="_blank"
+          >bitwise operations and their performance in Javascript</a
+        >.
+      </p>
+      <ol>
+        <li>
+          <img
+            src="/assets/hashbrowns/djbx33a-hash-math.png"
+            width="320"
+            alt="(hash << 5 + hash) = hash * 2^5 + hash = hash * 33"
+          />
+        </li>
+        <li>
+          hash >>> 0 - see
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift"
+            target="_blank"
+            >mdn web docs</a
+          >
+        </li>
+        <li>
+          str.charCodeAt(i) - see
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt"
+            target="_blank"
+            >mdn web docs</a
+          >
+        </li>
+      </ol>
+      <p>
+        Also, why are there magic numbers: 5381 and 33?? Don't think too hard about it - they're
+        magic. You can poke around the Internet more if you're curious.
+      </p>
+
+      <h2 id="fnv" class="text-large">Example 3: fnv1a_32</h2>
+      <p>
+        The last example I'll share here is fnv1a_32, named after Fowler-Noll-Vo (FNV).
+      </p>
+
+      <pre><code class="language-javascript">
+  // Magic numbers, base 16.
+  const FNV_PRIME = 0x01000193
+  const FNV_IV = 0x811c9dc5
+  
+  function fnv1a_32(str) {
+    let hash = FNV_IV;
+  
+    for (let i = 0; i < str.length; i++) {
+      hash ^= str.charCodeAt(i);
+      hash = (hash * FNV_PRIME) >>> 0;
+    }
+    return hash;
+  }
+
+</code></pre>
+      <p>
+        To test this, you can run this code snippet in your browser: right-click and click Inspect,
+        or use the keyboard shortcut (option-command-I on Mac). Again,
+        <b>do not use this hash function for passwords or secure data.</b> You can test it with dog
+        breeds or farm animals.
+      </p>
+      <p>
+        Similarly to the djbx33a function, the fnv1a_32 function is basic Javascript with 3 bits
+        that stand out.
+      </p>
+      <ol>
+        <li>
+          ^= operator - see
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR"
+            target="_blank"
+            >mdn web docs</a
+          >
+        </li>
+        <li>
+          str.charCodeAt(i) - see
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt"
+            target="_blank"
+            >mdn web docs</a
+          >
+        </li>
+        <li>
+          (hash * FNV_PRIME) >>> 0 - see
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift"
+            target="_blank"
+            >mdn web docs</a
+          >
+        </li>
+      </ol>
+      <h2 class="text-large" id="credits">Credits</h2>
+      <p>
+        This post was inspired by an ACM Queue article,
+        <a href="https://queue.acm.org/detail.cfm?id=3690759" target="_blank"
+          >Questioning the Criteria for Evaluating Non-cryptographic Hash Functions</a
+        >. Indeed, we should think more about non-cryptographic hash functions.
+      </p>
+      <p>
+        For the hashbrown image: The hash brown photo is from Dandk Organizer. The Scrabble tiles
+        are from
+        <a href="https://www.etsy.com/shop/FireflyDesignn" target="_blank">this Etsy shop</a>. The
+        art was inspired by an Etsy shop selling a hash brown squeaky dog toy.
+      </p>
+      <p>
+        The LaTeX formula is from <a href="https://quicklatex.com/" target="_blank">QuickLaTeX</a>.
+      </p>
+      <h2 class="text-large" id="footnotes">Footnotes</h2>
+      <p id="footnote-1">
+        <a href="#inline-footnote-1" class="footnote-black">(1)</a> I actually got this question,
+        "Implement a hash table", a few years ago when interviewing. I'm pretty sure I failed the
+        question because I did not get the job offer.
+      </p>
+    </div>
+  </body>
+</html>
