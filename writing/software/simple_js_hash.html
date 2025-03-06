@@ -1,12 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Elaine Lin Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Elaine Lin" />
-    <meta name="title" property="og:title" content="Simple non-cryptographic hash functions in Javascript" />
-    <meta name="description" property="og:description" content="3 simple examples of hash functions in Javascript. Do NOT use these for passwords - use a library instead." />
+    <meta
+      name="title"
+      property="og:title"
+      content="Simple non-cryptographic hash functions in Javascript"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="3 simple examples of hash functions in Javascript. Do NOT use these for passwords - use a library instead."
+    />
     <meta
       property="og:image"
       content="https://www.elainewlin.com/assets/hashbrowns/hashbrowns-cropped.png"
@@ -27,7 +35,7 @@
     </script>
 
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         $(".navigation").load("/base/nav.html");
       });
     </script>
@@ -55,7 +63,7 @@
         <li><a href="#credits">Credits & Footnotes</a></li>
       </ul>
 
-      <h2 id="intro" class="text-large">Introduction</h2>
+      <h2 class="text-large" id="intro">Introduction</h2>
       <p>
         "Implement a hash table." is a classic programming interview question.<sup
           ><a href="#footnote-1" id="inline-footnote-1" class="footnote-black">(1)</a></sup
@@ -97,7 +105,7 @@
         <b>do not write your own hash functions for passwords or secure data.</b> I include toy
         examples of Javascript non-cryptographic hash functions for learning purposes.
       </p>
-      <h2 id="mod" class="text-large">Example 1: modulo operator (%)</h2>
+      <h2 class="text-large" id="mod">Example 1: modulo operator (%)</h2>
       <p>The simplest example of a non-cryptographic hash function is the modulo operator (%).</p>
       <pre><code class="language-javascript">
   const mod_hash = (num) => num % 5;
@@ -125,11 +133,15 @@
         <li>30 % 5 = 0 because 30 = 5 * 6 + 0.</li>
       </ul>
       <p>
-        To test this, you can also run the mod_hash Javascript code snippet in your browser: right-click
-        and click Inspect, or use the keyboard shortcut (option-command-I on Mac).
+        To test this, you can also run the mod_hash Javascript code snippet in your browser:
+        right-click and click Inspect, or use the keyboard shortcut (option-command-I on Mac).
       </p>
       <p class="center">
-        <img src="/assets/hashbrowns/mod-hash-browser-inspect.png" width="600" alt="A screenshot of the browser console computing mod_hash for the numbers 1-10." />
+        <img
+          src="/assets/hashbrowns/mod-hash-browser-inspect.png"
+          width="600"
+          alt="A screenshot of the browser console computing mod_hash for the numbers 1-10."
+        />
       </p>
       <pre><code class="language-javascript">
   // 💡 Learning check: Take a minute to compute
@@ -139,7 +151,7 @@
   // Do it in your head. You can double-check by running the code.
 
 </code></pre>
-      <h2 id="djb" class="text-large">Example 2: djbx33a</h2>
+      <h2 class="text-large" id="djb">Example 2: djbx33a</h2>
       <p>
         Another example of a simple, non-cryptographic hash function is djbx33a. The function is
         named after Daniel J. Bernstein (DJB).
@@ -203,10 +215,8 @@
         magic. You can poke around the Internet more if you're curious.
       </p>
 
-      <h2 id="fnv" class="text-large">Example 3: fnv1a_32</h2>
-      <p>
-        The last example I'll share here is fnv1a_32, named after Fowler-Noll-Vo (FNV).
-      </p>
+      <h2 class="text-large" id="fnv">Example 3: fnv1a_32</h2>
+      <p>The last example I'll share here is fnv1a_32, named after Fowler-Noll-Vo (FNV).</p>
 
       <pre><code class="language-javascript">
   // Magic numbers, base 16.
@@ -279,7 +289,8 @@
       <h2 class="text-large" id="footnotes">Footnotes</h2>
       <p id="footnote-1">
         <a href="#inline-footnote-1" class="footnote-black">(1)</a> I actually got this question,
-        "Implement a hash table", a few years ago when interviewing. I'm pretty sure I failed it because I did not get the job offer.
+        "Implement a hash table", a few years ago when interviewing. I'm pretty sure I failed it
+        because I did not get the job offer.
       </p>
     </div>
   </body>

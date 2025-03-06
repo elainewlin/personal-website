@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Elaine Lin Portfolio - Stitch Counter</title>
@@ -22,7 +22,7 @@
     <script src="./js/jquery.min.js"></script>
 
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         $(".navigation").load("/base/nav.html");
       });
     </script>
@@ -38,28 +38,20 @@
         <div class="text-large count-row">
           <div class="count-label">Row count</div>
           <div>
-            <button class="btn minus-button big-button" onclick="subtractRow()">
-              -1
-            </button>
+            <button class="btn minus-button big-button" onclick="subtractRow()">-1</button>
             <span id="rowCount" class="count-number"></span>
-            <button class="btn add-button big-button" onclick="addRow()">
-              +1
-            </button>
+            <button class="btn add-button big-button" onclick="addRow()">+1</button>
           </div>
         </div>
         <div class="text-large count-row">
           <div class="count-label">Stitch count</div>
           <div>
-            <button class="btn minus-button big-button" onclick="updateStitch(-10)">
-              -10
-            </button>
+            <button class="btn minus-button big-button" onclick="updateStitch(-10)">-10</button>
             <button class="btn minus-button big-button margin-left" onclick="updateStitch(-1)">
               -1
             </button>
             <span id="stitchCount" class="count-number"></span>
-            <button class="btn add-button big-button" onclick="updateStitch(1)">
-              +1
-            </button>
+            <button class="btn add-button big-button" onclick="updateStitch(1)">+1</button>
             <button class="btn add-button big-button margin-left" onclick="updateStitch(10)">
               +10
             </button>
@@ -75,9 +67,7 @@
             id="sectionName"
             placeholder="Name"
           />
-          <button type="submit" class="btn btn-outline-secondary medium-button">
-            Add Section
-          </button>
+          <button type="submit" class="btn btn-outline-secondary medium-button">Add Section</button>
         </form>
       </div>
       <div class="row overview-section">

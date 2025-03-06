@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Elaine Lin Portfolio</title>
@@ -12,7 +12,7 @@
     <script src="/js/bootstrap.min.js"></script>
 
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         $(".navigation").load("/base/nav.html");
       });
     </script>
@@ -23,7 +23,7 @@
       <nav class="navigation"></nav>
     </div>
     <div class="container">
-      <h2>Practical git cheat sheet</h2>
+      <h1 class="text-x-large">Practical git cheat sheet</h1>
       <p>
         Do you want to improve your git skills? Do you ever struggle with merge conflicts, giant
         changes, or mysterious errors?
@@ -39,7 +39,7 @@
         <li><a href="#practical-git-workflows">Practical git workflows</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
-      <h4 id="what-is-git">What is git?</h4>
+      <h2 class="text-large" id="what-is-git">What is git?</h2>
       <p>
         Git is a version control system. Developers use version control to track and manage changes
         to software. Version control is like Google docs. Both let you to:
@@ -82,7 +82,7 @@
           </tr>
         </tbody>
       </table>
-      <h4 id="basic-git-terminology">Basic git terminology</h4>
+      <h2 class="text-large" id="basic-git-terminology">Basic git terminology</h2>
       <p>
         Learn basic git terminology to have a good mental model of what's going on. Here are some
         common terms you'll see:
@@ -172,7 +172,7 @@
         </ul>
       </ul>
 
-      <h4 id="common-git-commands">Common git commands</h4>
+      <h2 class="text-large" id="common-git-commands">Common git commands</h2>
       <p>
         Here are common git commands for day-to-day development. If you've never used git before, I
         suggest going through
@@ -360,10 +360,8 @@
         </li>
         <li>Add <code>--no-verify</code> when you make a commit to bypass any pre-commit hooks.</li>
       </ul>
-      <h4 id="practical-git-workflows">Practical git workflows</h4>
-      <p>
-        Here are some practical git workflows I use as a software engineer:
-      </p>
+      <h2 class="text-large" id="practical-git-workflows">Practical git workflows</h2>
+      <p>Here are some practical git workflows I use as a software engineer:</p>
       <ul>
         <li>
           <b>Making a feature branch</b> lets you develop on a local copy of the project without
@@ -450,9 +448,7 @@
             </td>
           </tr>
           <tr>
-            <td>
-              Applying changes between two commits to a new branch
-            </td>
+            <td>Applying changes between two commits to a new branch</td>
             <td>
               <pre>git reset --soft [prev commit]<br />git stash<br />git checkout [new branch name]<br />git stash apply</pre>
             </td>
@@ -472,7 +468,7 @@
         </tbody>
       </table>
 
-      <h4 id="conclusion">Conclusion</h4>
+      <h2 class="text-large" id="conclusion">Conclusion</h2>
       <p>
         When I first started programming, I struggled to install git and to set up a repository. Git
         can be confusing at first, but you'll get familiar over time.
@@ -491,7 +487,7 @@
         learn and grow.
       </p>
 
-      <h4 id="appendix">Appendix</h4>
+      <h2 class="text-large" id="appendix">Appendix</h2>
       <p>This section elaborates on various git workflows:</p>
       <ul>
         <li><a href="#terminal-101">Terminal 101</a></li>
@@ -499,7 +495,7 @@
         <li><a href="#fix-merge-conflict">Fixing a merge conflict</a></li>
         <li><a href="#big-feature-branch">Managing a big feature branch</a></li>
       </ul>
-      <h5 id="terminal-101">Terminal 101</h5>
+      <h3 class="text-medium" id="terminal-101">Terminal 101</h3>
       <p>
         To use git well, you should learn how to use the terminal. To open a terminal on Mac, type
         command-space and search "terminal".
@@ -508,9 +504,7 @@
         I use a Mac computer and Sublime Text for a text editor. Useful commands may vary depending
         on your operating system and preferred text editor.
       </p>
-      <p>
-        Here's a short reference of terminal commands:
-      </p>
+      <p>Here's a short reference of terminal commands:</p>
       <table class="table">
         <thead>
           <td>Command</td>
@@ -576,7 +570,7 @@
           separate tutorial to expand your knowledge here.
         </li>
       </ul>
-      <h5 id="vim-101">Vim 101</h5>
+      <h3 class="text-medium" id="vim-101">Vim 101</h3>
       <p>Vim is a text editor in your terminal. It looks something like this:</p>
       <p class="center">
         <img src="/assets/vim-terminal.png" width="600" alt="A screenshot of the Vim terminal" />
@@ -585,9 +579,7 @@
         My first experience with Vim was wondering "how do I get out of this thing?". It's confusing
         at first. In the main mode, tapping on keyboard keys moves the cursor and doesn't add text.
       </p>
-      <p>
-        Vim is useful for writing git commit messages. Here's a short reference:
-      </p>
+      <p>Vim is useful for writing git commit messages. Here's a short reference:</p>
       <table class="table">
         <thead>
           <td>What to type</td>
@@ -612,7 +604,7 @@
           </tr>
         </tbody>
       </table>
-      <h5 id="fix-merge-conflict">Fixing a merge conflict</h5>
+      <h3 class="text-medium" id="fix-merge-conflict">Fixing a merge conflict</h3>
       <p>
         Usually, Git can merge changes without intervention. Merge conflicts happen when Git doesn't
         know which changes to keep and asks you to help out.
@@ -661,7 +653,7 @@
       &lt;/td&gt;
     </pre
       >
-      <h5 id="big-feature-branch">Managing a big feature branch</h5>
+      <h3 class="text-medium" id="big-feature-branch">Managing a big feature branch</h3>
       <p>
         If you're working on a big feature, you can set up a big feature branch. This helps you:
       </p>
