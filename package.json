@@ -1,0 +1,17 @@
+{
+  "name": "elainewlin",
+  "version": "1.0.0",
+  "description": "Code for www.elainewlin.com",
+  "scripts": {
+    "pretty": "prettier '**/*.html' --write --prose-wrap preserve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elainewlin/personal-website.git"
+  },
+  "author": "Elaine Lin",
+  "homepage": "https://github.com/elainewlin/personal-website#readme",
+  "dependencies": {
+    "prettier": "^3.5.3"
+  }
+}
