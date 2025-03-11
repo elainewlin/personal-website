@@ -16,6 +16,5 @@ npm run pretty
 
 ## License
 
-This source code is **publicly available for viewing** but **cannot be copied, modified, or redistributed** in any way.
-
-**All rights reserved.** If you wish to use this code, please contact me for explicit permission.
+- This source code is **publicly available for viewing** but **cannot be copied, modified, or redistributed** in any way - see [LICENSE](LICENSE).
+- The **writing and documentation** are licensed under **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)** – see [LICENSE-WRITING.md](LICENSE-WRITING.md).
