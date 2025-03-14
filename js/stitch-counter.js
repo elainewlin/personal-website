@@ -2,7 +2,7 @@ const storageKey = "stitchCounter";
 const storedData = localStorage.getItem(storageKey) || "[]";
 const sectionData = JSON.parse(storedData);
 
-let currentSection = sectionData[0];
+let activeSection = sectionData[0];
 rerender();
 
 function findSection(name) {
@@ -14,48 +14,48 @@ function updateLocalStorage() {
 }
 
 function addRow() {
-  if (currentSection.stitchCount === 0) {
+  if (activeSection.stitchCount === 0) {
     window.alert("No stitches in row - increment Stitch count first.");
     return;
   }
-  const newRowCount = currentSection.rowCount + 1;
-  currentSection.history.push({
+  const newRowCount = activeSection.rowCount + 1;
+  activeSection.history.push({
     rowCount: newRowCount,
-    stitchCount: currentSection.stitchCount
+    stitchCount: activeSection.stitchCount
   });
-  currentSection.rowCount = newRowCount;
-  currentSection.stitchCount = 0;
+  activeSection.rowCount = newRowCount;
+  activeSection.stitchCount = 0;
   updateLocalStorage();
   rerender();
 }
 
 function subtractRow() {
-  const newRowCount = currentSection.rowCount - 1;
+  const newRowCount = activeSection.rowCount - 1;
   if (newRowCount < 0) return;
-  currentSection.history.pop();
+  activeSection.history.pop();
 
-  currentSection.rowCount = newRowCount;
+  activeSection.rowCount = newRowCount;
   updateLocalStorage();
   rerender();
 }
 
 function updateStitch(amount) {
-  const newStitchCount = currentSection.stitchCount + amount;
+  const newStitchCount = activeSection.stitchCount + amount;
   if (newStitchCount < 0) return;
-  currentSection.stitchCount = newStitchCount;
+  activeSection.stitchCount = newStitchCount;
   updateLocalStorage();
   rerender();
 }
 
 function deleteSection() {
   const areYouSureText =
-    `Are you sure you want to delete the section: ${currentSection.name}?\n\n` +
+    `Are you sure you want to delete the section: ${activeSection.name}?\n\n` +
     "This will delete all your progress for the section.";
   if (!confirm(areYouSureText)) return;
 
-  const index = sectionData.findIndex(s => s.name === currentSection.name);
+  const index = sectionData.findIndex(s => s.name === activeSection.name);
   sectionData.splice(index, 1);
-  currentSection = sectionData[0];
+  activeSection = sectionData[0];
   updateLocalStorage();
   rerender();
 }
@@ -78,7 +78,7 @@ $("#newSectionForm").submit(function(e) {
     history: []
   };
   sectionData.push(newSection);
-  currentSection = newSection;
+  activeSection = newSection;
   updateLocalStorage();
   rerender();
 
@@ -89,27 +89,27 @@ $("#newSectionForm").submit(function(e) {
 $(document).on("click", ".section-name", function() {
   const rowInd = $(this).attr("data-ind");
   const section = sectionData[rowInd];
-  currentSection = section;
+  activeSection = section;
   rerender();
 });
 
 function renderInfoText() {
-  if (currentSection) {
+  if (activeSection) {
     $("#infoText").hide();
   } else {
     $("#infoText").show();
   }
 }
 
-function renderCurrentSection() {
-  if (!currentSection) {
+function renderActiveSection() {
+  if (!activeSection) {
     return;
   }
 
-  $("#currentSectionName").text(currentSection.name);
-  $("#sectionToDelete").text(currentSection.name);
-  $("#rowCount").text(currentSection.rowCount);
-  $("#stitchCount").text(currentSection.stitchCount);
+  $("#activeSectionName").text(activeSection.name);
+  $("#sectionToDelete").text(activeSection.name);
+  $("#rowCount").text(activeSection.rowCount);
+  $("#stitchCount").text(activeSection.stitchCount);
 }
 
 function formatHistory(history) {
@@ -141,11 +141,11 @@ function renderSectionTableRow(section, ind) {
 
 function renderSectionTable() {
   if (sectionData.length === 0) {
-    $("#currentSection").hide();
+    $("#activeSection").hide();
     $(".overview-section").hide();
     return;
   }
-  $("#currentSection").show();
+  $("#activeSection").show();
   $(".overview-section").show();
   const tableRows = sectionData
     .map((section, ind) => {
@@ -159,6 +159,6 @@ function renderSectionTable() {
 
 function rerender() {
   renderInfoText();
-  renderCurrentSection();
+  renderActiveSection();
   renderSectionTable();
 }
