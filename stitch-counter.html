@@ -12,19 +12,15 @@
 
       gtag("config", "G-CTY2FXWWQ0");
     </script>
-    <title>Stitch Counter | Elaine Lin, staff software engineer</title>
+    <title>Free Online Stitch Counter</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Elaine Lin" />
-    <meta
-      name="title"
-      property="og:title"
-      content="Free Online Stitch Counter - Knitting / Crochet"
-    />
+    <meta name="title" property="og:title" content="Free Online Stitch Counter" />
     <meta
       name="description"
       property="og:description"
-      content="This is a simple, free online stitch counter for knitting, crochet, or other fiber arts."
+      content="This is a simple, free online stitch counter for knitting, crochet, and other fiber arts."
     />
     <link rel="icon" href="/assets/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
@@ -44,9 +40,18 @@
       <nav class="navigation"></nav>
     </div>
     <div class="container">
-      <div class="count-section" id="activeSection">
-        <h1 class="text-x-large" id="activeSectionName"></h1>
-        <div class="text-large count-row">
+      <div>
+        <h1 class="text-x-large">Free Online Stitch Counter</h1>
+        <p id="infoText">
+          This is a free online stitch counter for knitting, crochet, and other fiber arts. Start by
+          adding the name of your project (i.e. crochet koala) or the project section you are
+          working on (i.e. left sleeve). Then, as you make progress, increment the stitch count and
+          row count, or add new sections.
+        </p>
+      </div>
+      <div class="count-section" id="currentSection">
+        <p class="text-large">Current section: <span id="currentSectionName"></span></p>
+        <div class="text-medium count-row">
           <div class="count-label">Row count</div>
           <div>
             <button class="btn minus-button big-button" onclick="subtractRow()">-1</button>
@@ -54,7 +59,7 @@
             <button class="btn add-button big-button" onclick="addRow()">+1</button>
           </div>
         </div>
-        <div class="text-large count-row">
+        <div class="text-medium count-row">
           <div class="count-label">Stitch count</div>
           <div>
             <button class="btn minus-button big-button" onclick="updateStitch(-10)">-10</button>
@@ -69,31 +74,31 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div>
         <form class="form-inline" id="newSectionForm">
           <label class="sr-only" for="sectionName">Section Name</label>
           <input
             type="text"
             class="form-control medium-input"
             id="sectionName"
-            placeholder="Name"
+            placeholder="Name (i.e. left sleeve)"
           />
           <button type="submit" class="btn btn-outline-secondary medium-button">Add Section</button>
         </form>
       </div>
-      <div class="row overview-section">
+      <div class="overview-section">
         <table class="table overview-table" id="sectionTable">
           <thead>
             <tr>
               <th scope="col" class="section-header">Section</th>
-              <th scope="col">History</th>
+              <th scope="col">Rows Completed</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
         <div class="delete-section">
           <button class="btn btn-outline-secondary" onclick="deleteSection()">
-            Delete section
+            Delete section: <span id="sectionToDelete"></span>
           </button>
         </div>
       </div>

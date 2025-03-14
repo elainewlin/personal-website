@@ -2,7 +2,7 @@ const storageKey = "stitchCounter";
 const storedData = localStorage.getItem(storageKey) || "[]";
 const sectionData = JSON.parse(storedData);
 
-let activeSection = sectionData[0];
+let currentSection = sectionData[0];
 rerender();
 
 function findSection(name) {
@@ -14,59 +14,60 @@ function updateLocalStorage() {
 }
 
 function addRow() {
-  if (activeSection.stitchCount === 0) {
-    window.alert("No stitches in row");
+  if (currentSection.stitchCount === 0) {
+    window.alert("No stitches in row - increment Stitch count first.");
     return;
   }
-  const newRowCount = activeSection.rowCount + 1;
-  activeSection.history.push({
+  const newRowCount = currentSection.rowCount + 1;
+  currentSection.history.push({
     rowCount: newRowCount,
-    stitchCount: activeSection.stitchCount
+    stitchCount: currentSection.stitchCount
   });
-  activeSection.rowCount = newRowCount;
-  activeSection.stitchCount = 0;
+  currentSection.rowCount = newRowCount;
+  currentSection.stitchCount = 0;
   updateLocalStorage();
   rerender();
 }
 
 function subtractRow() {
-  const newRowCount = activeSection.rowCount - 1;
+  const newRowCount = currentSection.rowCount - 1;
   if (newRowCount < 0) return;
-  activeSection.history.pop();
+  currentSection.history.pop();
 
-  activeSection.rowCount = newRowCount;
+  currentSection.rowCount = newRowCount;
   updateLocalStorage();
   rerender();
 }
 
 function updateStitch(amount) {
-  const newStitchCount = activeSection.stitchCount + amount;
+  const newStitchCount = currentSection.stitchCount + amount;
   if (newStitchCount < 0) return;
-  activeSection.stitchCount = newStitchCount;
+  currentSection.stitchCount = newStitchCount;
   updateLocalStorage();
   rerender();
 }
 
 function deleteSection() {
-  const areYouSure = `Are you sure you want to delete section ${activeSection.name
-    }?`;
-  if (!confirm(areYouSure)) return;
+  const areYouSureText =
+    `Are you sure you want to delete the section: ${currentSection.name}?\n\n` +
+    "This will delete all your progress for the section.";
+  if (!confirm(areYouSureText)) return;
 
-  const index = sectionData.findIndex(s => s.name === activeSection.name);
+  const index = sectionData.findIndex(s => s.name === currentSection.name);
   sectionData.splice(index, 1);
-  activeSection = sectionData[0];
+  currentSection = sectionData[0];
   updateLocalStorage();
   rerender();
 }
 
-$("#newSectionForm").submit(function (e) {
+$("#newSectionForm").submit(function(e) {
   const sectionName = $("#sectionName").val();
   if (!sectionName) {
-    window.alert("Please enter a section name");
+    window.alert("Please enter a section name.");
     return;
   }
   if (findSection(sectionName)) {
-    window.alert("Please enter a unique section name");
+    window.alert("Please enter a unique section name.");
     return false;
   }
 
@@ -77,7 +78,7 @@ $("#newSectionForm").submit(function (e) {
     history: []
   };
   sectionData.push(newSection);
-  activeSection = newSection;
+  currentSection = newSection;
   updateLocalStorage();
   rerender();
 
@@ -85,21 +86,30 @@ $("#newSectionForm").submit(function (e) {
   return false;
 });
 
-$(document).on("click", ".section-name", function () {
+$(document).on("click", ".section-name", function() {
   const rowInd = $(this).attr("data-ind");
   const section = sectionData[rowInd];
-  activeSection = section;
+  currentSection = section;
   rerender();
 });
 
-function renderActiveSection() {
-  if (!activeSection) {
+function renderInfoText() {
+  if (currentSection) {
+    $("#infoText").hide();
+  } else {
+    $("#infoText").show();
+  }
+}
+
+function renderCurrentSection() {
+  if (!currentSection) {
     return;
   }
 
-  $("#activeSectionName").text(activeSection.name);
-  $("#rowCount").text(activeSection.rowCount);
-  $("#stitchCount").text(activeSection.stitchCount);
+  $("#currentSectionName").text(currentSection.name);
+  $("#sectionToDelete").text(currentSection.name);
+  $("#rowCount").text(currentSection.rowCount);
+  $("#stitchCount").text(currentSection.stitchCount);
 }
 
 function formatHistory(history) {
@@ -131,11 +141,11 @@ function renderSectionTableRow(section, ind) {
 
 function renderSectionTable() {
   if (sectionData.length === 0) {
-    $("#activeSection").hide();
+    $("#currentSection").hide();
     $(".overview-section").hide();
     return;
   }
-  $("#activeSection").show();
+  $("#currentSection").show();
   $(".overview-section").show();
   const tableRows = sectionData
     .map((section, ind) => {
@@ -148,6 +158,7 @@ function renderSectionTable() {
 }
 
 function rerender() {
-  renderActiveSection();
+  renderInfoText();
+  renderCurrentSection();
   renderSectionTable();
 }
