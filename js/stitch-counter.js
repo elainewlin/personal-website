@@ -15,7 +15,7 @@ function updateLocalStorage() {
 
 function addRow() {
   if (activeSection.stitchCount === 0) {
-    window.alert("No stitches in row");
+    window.alert("No stitches in row - increment Stitch count first.");
     return;
   }
   const newRowCount = activeSection.rowCount + 1;
@@ -48,9 +48,10 @@ function updateStitch(amount) {
 }
 
 function deleteSection() {
-  const areYouSure = `Are you sure you want to delete section ${activeSection.name
-    }?`;
-  if (!confirm(areYouSure)) return;
+  const areYouSureText =
+    `Are you sure you want to delete the section: ${activeSection.name}?\n\n` +
+    "This will delete all your progress for the section.";
+  if (!confirm(areYouSureText)) return;
 
   const index = sectionData.findIndex(s => s.name === activeSection.name);
   sectionData.splice(index, 1);
@@ -59,14 +60,14 @@ function deleteSection() {
   rerender();
 }
 
-$("#newSectionForm").submit(function (e) {
+$("#newSectionForm").submit(function(e) {
   const sectionName = $("#sectionName").val();
   if (!sectionName) {
-    window.alert("Please enter a section name");
+    window.alert("Please enter a section name.");
     return;
   }
   if (findSection(sectionName)) {
-    window.alert("Please enter a unique section name");
+    window.alert("Please enter a unique section name.");
     return false;
   }
 
@@ -85,12 +86,20 @@ $("#newSectionForm").submit(function (e) {
   return false;
 });
 
-$(document).on("click", ".section-name", function () {
+$(document).on("click", ".section-name", function() {
   const rowInd = $(this).attr("data-ind");
   const section = sectionData[rowInd];
   activeSection = section;
   rerender();
 });
+
+function renderInfoText() {
+  if (activeSection) {
+    $("#infoText").hide();
+  } else {
+    $("#infoText").show();
+  }
+}
 
 function renderActiveSection() {
   if (!activeSection) {
@@ -98,6 +107,7 @@ function renderActiveSection() {
   }
 
   $("#activeSectionName").text(activeSection.name);
+  $("#sectionToDelete").text(activeSection.name);
   $("#rowCount").text(activeSection.rowCount);
   $("#stitchCount").text(activeSection.stitchCount);
 }
@@ -148,6 +158,7 @@ function renderSectionTable() {
 }
 
 function rerender() {
+  renderInfoText();
   renderActiveSection();
   renderSectionTable();
 }
